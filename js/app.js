@@ -18,7 +18,7 @@ let isPlaying
 const feedBtn = document.querySelector("#feed-btn")
 const playBtn = document.querySelector("#play-btn")
 const napBtn = document.querySelector("#nap-btn")
-
+const resetBtn = document.querySelector("#reset-btn")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
