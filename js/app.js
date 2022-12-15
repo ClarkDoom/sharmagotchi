@@ -19,16 +19,17 @@ const feedBtn = document.querySelector("#feed-btn")
 const playBtn = document.querySelector("#play-btn")
 const napBtn = document.querySelector("#nap-btn")
 const resetBtn = document.querySelector("#reset-btn")
-const nameSubmitBtn = document.querySelector("#submit-name")
 // just edited this, was looking at the wrong thing
 const nameEl = document.querySelector("#name")
 const statsPanel = document.querySelector(".stats-panel")
 const nameInput = document.querySelector("#name-input")
+const nameSubmitBtn = document.querySelector("#submit-name")
 const foodSupplyEl = document.querySelector("#food-supply")
 const alertsPanelEl = document.querySelector("#alerts-panel")
 const healthMeterEl = document.querySelector("#health-meter")
 const petWeightEl = document.querySelector("#pet-weight")
 
+const statsHeader = document.querySelector("#stats-header")
 /*----------------------------- Event Listeners -----------------------------*/
 
 feedBtn.addEventListener('click', feedPet)
@@ -47,6 +48,8 @@ function playPet(){
 function takeNap(){
   console.log("button works")
 }
+// defined so that I can refrain from receiving a console error
+function reset(){}
 
 /*-------------------------------- Functions --------------------------------*/
 init()
@@ -56,7 +59,7 @@ init()
 function init(){
   healthMeter = 1
   petWeight = 1
-  isSleeping = false
+  isNapping = false
   isPlaying = false
   setInitialFoodQuantity()
   updateHealthMeter()
@@ -90,7 +93,7 @@ function updatePetWeight(){
   petWeightEl.textContent = ("Pet Weight: " + petWeight)
 }
 
-// create a function that prompts the user to input a name for their pet, store the name in a variable to display in UI, trigger confetti or another celebratory animation
+//* create a function that prompts the user to input a name for their pet, store the name in a variable to display in UI, trigger confetti or another celebratory animation
 
 function submitName(){
   console.log("button works")
@@ -100,12 +103,15 @@ function submitName(){
   statsPanel.removeChild(nameInput)
   statsPanel.removeChild(nameSubmitBtn)
   confetti.start(1500)
-  alertsPanelEl.textContent = "Pet Name Submitted"
+  alertsPanelEl.textContent = ("You Named your Pet " + petName)
+  setTimeout(() => {
+    alertsPanelEl.textContent = ""
+  }, 5000)
   // add timer to remove alert
   // need to add happy animation
 }
 
-// create a function that will allow a user to feed their pet and increment the pet's health meter, increment the pets weight, and decrement the user's food supply, update health meter/pet weight/food supply in UI, trigger a happy pet animation
+//* create a function that will allow a user to feed their pet and increment the pet's health meter, increment the pets weight, and decrement the user's food supply, update health meter/pet weight/food supply in UI, trigger a happy pet animation
 
 function feedPet(){
   if(foodSupply >=1){
@@ -113,6 +119,11 @@ function feedPet(){
     healthMeter++
     petWeight++
     render()
+    alertsPanelEl.textContent = "You Fed Your Pet"
+    setTimeout(() => {
+      alertsPanelEl.textContent = ""
+    }, 5000)
+    // add happy pet animation 
   } else {
     alertsPanelEl.textContent = " not enough food"
   }
@@ -120,29 +131,58 @@ function feedPet(){
 
 // create a function that will decrement the pet's health meter if neglected (left for a certain period of time without activity), update health meter in UI, trigger a sad pet animation
 
+function neglectedPet(){
 
-// create a function that will allow your pet to take a nap, incrementing health meter, displaying in UI and triggering an animation // level up by having a sleepy meter to indicate when your pet needs sleep
+}
+
+
+//* create a function that will allow your pet to take a nap, incrementing health meter, displaying in UI and triggering an animation // level up by having a sleepy meter to indicate when your pet needs sleep
 
 function takeNap(){
   // maybe setup a timer that says you can't take a nap but x times every x minutes
   healthMeter++
+  foodSupply++
+  isNapping = true
   render()
+  alertsPanelEl.textContent = "Your Pet is Napping"
+  setTimeout(() => {
+    isNapping = false
+    alertsPanelEl.textContent = "Your Pet is Done Napping"
+  }, 5000)
+  setTimeout(() => {
+    alertsPanelEl.textContent = ""
+  }, 10000)
   // add animation 
   // add sleepy meter
 }
 
-// create a function that will allow user to play with their pet, incrementing health meter, triggering a play animation ('shar-ing' aka zoomies)
+//* create a function that will allow user to play with their pet, incrementing health meter, triggering a play animation ('shar-ing' aka zoomies)
 
 function playPet(){
   // maybe setup a timer that says you can't take a nap but x times every x minutes
-  healthMeter
+  foodSupply++
+  healthMeter++
+  isPlaying = true
+  alertsPanelEl.textContent = "Your Pet is Playing"
+  render()
+  setTimeout(() => {
+    isPlaying = false
+    alertsPanelEl.textContent = "Your Pet is Done Playing"
+  }, 5000)
+  setTimeout(() => {
+    alertsPanelEl.textContent = ""
+  }, 10000)
+  // add play animation
 }
 
 // create a function to reset pet stats so that a user can start over, include a "are you sure?" prompt
 
-function reset(){
-  init()
-}
+// add this last
+// function reset(){
+//   init()
+//   nameEl.textContent = ""
+//   statsHeader.appendChild("<br>"nameInput, nameSubmitBtn)
+// }
 
 // create a function that increases pet's age every x interval
 
