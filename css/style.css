@@ -1,13 +1,53 @@
+/* Questions */
+/* How do i get the stats panel to show on the right of the main display?
+    
+
+
+
+*/
+
 body {
   background-color: slategrey;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .main-display {
   background-color: black;
   width: 800px;
   height: 600px;
-  margin: 50px auto;}
+  margin: 50px auto;
+}
 
+.stats-panel {
+  background-color: black;
+  width: 200px;
+  height: 300px;
+  margin: 50px auto;
+}
 
+.interaction-button {
 
+}
+
+#feed-btn {
+
+}
+
+#play-btn {
+
+}
+
+#nap-btn {
+
+}
+
+.button-panel {
+  
+}
+
+.display-panels {
+  
+}
 

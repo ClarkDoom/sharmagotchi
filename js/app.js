@@ -15,11 +15,27 @@ let isPlaying
 
 /*------------------------ Cached Element References ------------------------*/
 
+const feedBtn = document.querySelector("#feed-btn")
+const playBtn = document.querySelector("#play-btn")
+const napBtn = document.querySelector("#nap-btn")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+feedBtn.addEventListener('click', feedPet)
+playBtn.addEventListener('click', playPet)
+napBtn.addEventListener('click', takeNap)
 
+// quick tests to ensure buttons work
+// function feedPet(){
+//   console.log("button works")
+// }
+// function playPet(){
+//   console.log("button works")
+// }
+// function takeNap(){
+//   console.log("button works")
+// }
 
 /*-------------------------------- Functions --------------------------------*/
 
