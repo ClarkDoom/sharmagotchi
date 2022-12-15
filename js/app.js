@@ -1,9 +1,16 @@
 /*-------------------------------- Constants --------------------------------*/
 
+// not sure if this should be a constantr
+let petName
 
 
 /*---------------------------- Variables (state) ----------------------------*/
 
+let foodSupply
+let healthMeter
+let petWeight
+let isSleeping
+let isPlaying
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -15,6 +22,10 @@
 
 
 /*-------------------------------- Functions --------------------------------*/
+
+// create a function to initialize the game
+
+// create a function to render game state
 
 // create a function that prompts the user to input a name for their pet, store the name in a variable to display in UI, trigger confetti or another celebratory animation
 
