@@ -1,53 +1,66 @@
 /* Questions */
 /* How do i get the stats panel to show on the right of the main display?
-    
-
-
-
 */
 
 body {
+  font-family: 'Press Start 2P', cursive;
   background-color: slategrey;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  order: 1;
+}
+
+.display-panels{
+  order: 2;
+  /* flex-direction: row; 
+  WHY DOES THIS NOT WORK???? I want to take this display-panels div and convert it's flex direction to row but it will not work  
+  */
 }
 
 .main-display {
   background-color: black;
   width: 800px;
   height: 600px;
-  margin: 50px auto;
+  align-self: flex-start;
+  border-radius: 20px;
 }
 
 .stats-panel {
   background-color: black;
   width: 200px;
   height: 300px;
-  margin: 50px auto;
+  align-self: flex-end;
+  border-radius: 20px;
 }
 
-.interaction-button {
-
-}
-
-#feed-btn {
-
-}
-
-#play-btn {
-
-}
-
-#nap-btn {
-
+#reset-btn{
+  font-family: 'Press Start 2P', cursive;
 }
 
 .button-panel {
+  order: 3;
+}
+
+.interaction-button {
   
 }
 
-.display-panels {
-  
+#feed-btn {
+  font-family: 'Press Start 2P', cursive;
+}
+
+#play-btn {
+  font-family: 'Press Start 2P', cursive;
+}
+
+#nap-btn {
+  font-family: 'Press Start 2P', cursive;
 }
 
