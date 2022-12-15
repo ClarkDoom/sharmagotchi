@@ -5,7 +5,7 @@
 body {
   font-family: 'Press Start 2P', cursive;
   background-color: lightgreen;
-  background-image: url("http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/b995481ee80c803.png");
+  background-image: url(../assets/bush.png);
   background-size: 10%;
   background-repeat: repeat;
   text-align: center;
@@ -22,6 +22,8 @@ h1 {
   padding: 10px;
   border-radius: 10px;
   border: 2px solid black;
+  /* overriding the default margin of 22px */
+  margin: 10px;
 }
 
 .display-panels{
@@ -60,6 +62,7 @@ h1 {
 
 #reset-btn{
   font-family: 'Press Start 2P', cursive;
+  border: 2px solid black;
 }
 
 .button-panel {
@@ -86,6 +89,15 @@ h1 {
 
 #nap-btn {
   font-family: 'Press Start 2P', cursive;
-  border: 2px solid black;
 }
 
+#alerts-panel {
+  background-color: white;
+  width: 250px;
+  height: 100px;
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  border: 5px solid black;
+  margin-top: 10px;
+}

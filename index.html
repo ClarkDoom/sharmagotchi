@@ -10,6 +10,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
   <script defer src="./js/app.js"></script>
+  <script defer src="./js/confetti.js"></script>
 </head>
 <body>
   
@@ -19,16 +20,20 @@
     <div class="main-display"></div>
     <div class="stats-panel">
       <h3>Stats</h3>
-      <p>Health Meter:<br>❤️❤️❤️❤️❤️</p>
-      <p>Name:</p>
+      <p id="name">Name:</p>
+      <p id="health-meter"></p>
+      <input type="text" id="name-input" placeholder="Enter Pet Name"></input>
+      <button id="submit-name">Submit</button>
       <p>Age:</p>
-      <p>Weight</p>
+      <p id="pet-weight">Weight</p>
+      <p id="food-supply"></p>
       <button id="reset-btn">Reset</button></div>
     <div class="button-panel">
       <button class="interaction-button" id="feed-btn">Feed</button>
       <button class="interaction-button" id="play-btn">Play</button>
       <button class="interaction-button" id="nap-btn">Nap</button>
     </div>
+    <div id="alerts-panel"></div>
   </div>
   
 
