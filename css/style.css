@@ -4,7 +4,10 @@
 
 body {
   font-family: 'Press Start 2P', cursive;
-  background-color: slategrey;
+  background-color: lightgreen;
+  background-image: url("http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/b995481ee80c803.png");
+  background-size: 10%;
+  background-repeat: repeat;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -15,29 +18,35 @@ body {
 
 h1 {
   order: 1;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 
 .display-panels{
   order: 2;
   /* flex-direction: row; 
-  WHY DOES THIS NOT WORK???? I want to take this display-panels div and convert it's flex direction to row but it will not work  
+  WHY DOES THIS NOT WORK???? I want to take this display-panels div and convert it's flex direction to row so that the stats panel shows up on the right side of the main display but it will not work  
   */
 }
 
 .main-display {
-  background-color: black;
+  background-color: white;
   width: 800px;
   height: 600px;
   align-self: flex-start;
   border-radius: 20px;
+  border: 5px solid black;
 }
 
 .stats-panel {
-  background-color: black;
-  width: 200px;
-  height: 300px;
+  background-color: white;
+  width: 250px;
+  height: 350px;
   align-self: flex-end;
   border-radius: 20px;
+  border: 5px solid black;
 }
 
 #reset-btn{
@@ -49,7 +58,7 @@ h1 {
 }
 
 .interaction-button {
-  
+  border: 2px solid black;
 }
 
 #feed-btn {
@@ -62,5 +71,6 @@ h1 {
 
 #nap-btn {
   font-family: 'Press Start 2P', cursive;
+  border: 2px solid black;
 }
 
