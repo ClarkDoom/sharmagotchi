@@ -119,7 +119,7 @@ function feedPet(){
     healthMeter++
     petWeight++
     render()
-    alertsPanelEl.textContent = "You Fed Your Pet"
+    alertsPanelEl.textContent = ("You Fed " + petName)
     setTimeout(() => {
       alertsPanelEl.textContent = ""
     }, 5000)
@@ -144,10 +144,10 @@ function takeNap(){
   foodSupply++
   isNapping = true
   render()
-  alertsPanelEl.textContent = "Your Pet is Napping"
+  alertsPanelEl.textContent = (petName + " is Napping")
   setTimeout(() => {
     isNapping = false
-    alertsPanelEl.textContent = "Your Pet is Done Napping"
+    alertsPanelEl.textContent = (petName +" is Done Napping")
   }, 5000)
   setTimeout(() => {
     alertsPanelEl.textContent = ""
@@ -163,11 +163,11 @@ function playPet(){
   foodSupply++
   healthMeter++
   isPlaying = true
-  alertsPanelEl.textContent = "Your Pet is Playing"
+  alertsPanelEl.textContent = (petName + " is Playing")
   render()
   setTimeout(() => {
     isPlaying = false
-    alertsPanelEl.textContent = "Your Pet is Done Playing"
+    alertsPanelEl.textContent = (petName + " is Done Playing")
   }, 5000)
   setTimeout(() => {
     alertsPanelEl.textContent = ""
@@ -185,6 +185,8 @@ function playPet(){
 // }
 
 // create a function that increases pet's age every x interval
+
+// create a function that checks to see if a certain health meter treshold is reached and if it is render a celebration on the main-display 
 
 // LEVEL UP IDEA: Create a function that triggers a 'chew bone' animation and increments pet's health, separate animation from the standard eating animation 
 
