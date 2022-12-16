@@ -178,15 +178,14 @@ function playPet(){
 // create a function to reset pet stats so that a user can start over, include a "are you sure?" prompt
 
 // add this last
-// function reset(){
-//   init()
-//   nameEl.textContent = ""
-//   statsHeader.appendChild("<br>"nameInput, nameSubmitBtn)
-// }
+function reset(){
+  location.reload();
+  return false;
+}
 
 // create a function that increases pet's age every x interval
 
-// create a function that checks to see if a certain health meter treshold is reached and if it is render a celebration on the main-display 
+// create a function that checks to see if a certain health meter treshold is reached and if it is render a celebration on the main-display (petName as reached doggo Nirvana - have image of meditating pei)
 
 // LEVEL UP IDEA: Create a function that triggers a 'chew bone' animation and increments pet's health, separate animation from the standard eating animation 
 
