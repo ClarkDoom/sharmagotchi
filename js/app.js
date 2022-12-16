@@ -12,6 +12,7 @@ let petWeight
 let isSleeping
 let isPlaying
 
+let dancingAnimation = `<img id="shar-pei" src="./assets/sleeping-animation.gif" alt="shar pei dog">`
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -30,6 +31,7 @@ const healthMeterEl = document.querySelector("#health-meter")
 const petWeightEl = document.querySelector("#pet-weight")
 
 const statsHeader = document.querySelector("#stats-header")
+const mainDisplayEl = document.querySelector(".main-display")
 /*----------------------------- Event Listeners -----------------------------*/
 
 feedBtn.addEventListener('click', feedPet)
@@ -111,6 +113,17 @@ function submitName(){
   // need to add happy animation
 }
 
+// experiment area for making gifs appear
+function addElement(){
+  let newGif = document.createElement("img")
+  newGif.setAttribute("src", "./assets/sleeping-animation.gif")
+  newGif.setAttribute('width', "80%")
+  mainDisplayEl.appendChild(newGif)
+}
+
+// let newGif = petAnimationDisplay.createElement("img")
+// newGif.setAttribute("src","./assets/sleeping-animation.gif")
+
 //* create a function that will allow a user to feed their pet and increment the pet's health meter, increment the pets weight, and decrement the user's food supply, update health meter/pet weight/food supply in UI, trigger a happy pet animation
 
 function feedPet(){
@@ -191,4 +204,4 @@ function reset(){
 
 // LEVEL UP IDEA: Create a function that allows a pet to go to the bathroom, must include functionality that raises pet's bladder level and displays onscreen, health meter decrements by x amount during a specific time frequency if bladder is full and the pet hasn't relieved themselves, trigger animation for using restroom or animation of 'having an accident' if the bladder is left full for too long
 
-
+// LEVEL UP IDEA: Create an intial crawl animation of text that tells the store of sharmagotchi being adopted, give him a name, and make sure theyre the happiest pup in the world
