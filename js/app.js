@@ -27,6 +27,7 @@ const animationImg = document.querySelector("#animation")
 const healthProgressBar = document.querySelector(".health-progress-bar-fill")
 const hungerProgressBar = document.querySelector(".hunger-progress-bar-fill")
 const bladderProgressBar = document.querySelector(".bladder-progress-bar-fill")
+const sleepyProgressBar = document.querySelector(".sleepy-progress-bar-fill")
 // primary ui elements
 const nameEl = document.querySelector("#name")
 const statsPanelEl = document.querySelector(".stats-panel")
@@ -44,6 +45,7 @@ const playingAnimation = "../assets/playing-animation.gif"
 const hungryAnimation = "../assets/hungry-animation.gif"
 const gameOverImage = "../assets/game-over.png"
 const peeAnimation = "../assets/pee-animation.gif"
+const gettingSleepingAnimation = "../assets/getting-sleepy-animation.gif"
 /*----------------------------- Event Listeners -----------------------------*/
 feedBtn.addEventListener('click', feedPet)
 playBtn.addEventListener('click', playPet)
@@ -60,6 +62,7 @@ function init(){
   healthProgressBar.setAttribute("style", "width: 10%;")
   hungerProgressBar.setAttribute("style", "width: 10%;")
   bladderProgressBar.setAttribute("style", "width: 10%;")
+  sleepyProgressBar.setAttribute("style", "width: 10%;")
   petWeight = 1
   isNapping = false
   isPlaying = false
@@ -83,8 +86,16 @@ function render(){
 }
 
 function updateHealthMeter(){
-  healthMeterEl.textContent = ("Health Meter:")
-  healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
+  if(healthMeter >= 10){
+    alertsPanelEl.textContent = (petName + " has Been Successfully Raised")
+    confetti.start(1500)
+    healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
+    updateAnimation(happyAnimation)
+    gameOver = true
+    // needs to pause other timers
+  } else {
+    healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
+  }
   
 }
 function updateFoodSupply(){
@@ -175,6 +186,8 @@ function takeNap(){
     healthMeter++
     foodSupply++
     isNapping = true
+    sleepyInterval = 0
+    sleepyProgressBar.setAttribute("style", `width: ${sleepyInterval}%;`)
     render()
     updateAnimation(sleepingAnimation)
     alertsPanelEl.textContent = (petName + " is Napping")
@@ -293,8 +306,35 @@ let bladderTimer = setInterval(() => {
     bladderInterval += 10
     bladderProgressBar.setAttribute("style", `width: ${bladderInterval}%;`)
   }
-  if(bladderInterval === 60 || bladderInterval === 80){
+  if(bladderInterval === 80){
     actionOccuring == true // probably need to add a timer to set this as false
     alertsPanelEl.textContent = petName + " needs to go #1"
+  }
+}, 1000);
+
+// sleepy meter experiment
+
+let sleepyTimeLeft = 15
+let sleepyInterval = 10
+
+// i'd like this timer to not start until the name submit button has been hit
+let sleepyTimer = setInterval(() => {
+  console.log(sleepyTimeLeft)
+  sleepyTimeLeft -= 1
+  if(sleepyInterval === 100){
+    gameOver = true 
+    updateAnimation(gameOverImage)
+    alertsPanelEl.textContent = petName + " Passed Out - Please Reset"
+    clearInterval(sleepyTimer)
+  }
+  if(sleepyTimeLeft === -1){
+    sleepyTimeLeft = 15
+    sleepyInterval += 10
+    sleepyProgressBar.setAttribute("style", `width: ${sleepyInterval}%;`)
+  }
+  if(sleepyInterval === 60){
+    actionOccuring == true // probably need to add a timer to set this as false
+    alertsPanelEl.textContent = petName + " is Getting Sleepy"
+    updateAnimation(gettingSleepingAnimation)
   }
 }, 1000);
