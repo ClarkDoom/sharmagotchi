@@ -22,7 +22,8 @@ const nameSubmitBtn = document.querySelector("#submit-name")
 const nameInput = document.querySelector("#name-input")
 // used to control animation renders
 const animationImg = document.querySelector("#animation")
-const progressBar = document.querySelector(".progress-bar-fill")
+const healthProgressBar = document.querySelector(".health-progress-bar-fill")
+const hungerProgressBar = document.querySelector(".hunger-progress-bar-fill")
 // primary ui elements
 const nameEl = document.querySelector("#name")
 const statsPanelEl = document.querySelector(".stats-panel")
@@ -36,6 +37,8 @@ const leftFacingAnimation = "../assets/left-facing.png"
 const happyAnimation = "../assets/happy-animation.gif"
 const eatingAnimation = "../assets/eating-animation.gif"
 const sleepingAnimation = "../assets/sleeping-animation.gif"
+const playingAnimation = "../assets/playing-animation.gif"
+const hungryAnimation = "../assets/hungry-animation.gif"
 /*----------------------------- Event Listeners -----------------------------*/
 feedBtn.addEventListener('click', feedPet)
 playBtn.addEventListener('click', playPet)
@@ -48,10 +51,12 @@ init()
 
 function init(){
   healthMeter = 1
-  progressBar.setAttribute("style", "width: 10%;")
+  healthProgressBar.setAttribute("style", "width: 10%;")
+  hungerProgressBar.setAttribute("style", "width: 10%;")
   petWeight = 1
   isNapping = false
   isPlaying = false
+  gameOver = false
   setInitialFoodQuantity()
   updateHealthMeter()
   updatePetWeight()
@@ -71,7 +76,7 @@ function render(){
 
 function updateHealthMeter(){
   healthMeterEl.textContent = ("Health Meter:")
-  progressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
+  healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
   
 }
 function updateFoodSupply(){
@@ -114,6 +119,8 @@ function submitName(){
 function feedPet(){
   if(isEating === true){
     alertsPanelEl.textContent = (petName + " is Already Eating")
+  } else if(gameOver === true){
+    alertsPanelEl.textContent = ("Game Over: Please Reset")
   } else if(actionOccuring === true){
     alertsPanelEl.textContent = ("Please Wait")
   } else {
@@ -122,6 +129,8 @@ function feedPet(){
       foodSupply--
       healthMeter++
       petWeight++
+      hungerInterval = 0
+      hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
       isEating = true
       alertsPanelEl.textContent = ("You Fed " + petName)
       render()
@@ -130,7 +139,7 @@ function feedPet(){
         updateAnimation(leftFacingAnimation)
         isEating = false
         actionOccuring = false
-      }, 5600)
+      }, 1550)
       setTimeout(() => {
         alertsPanelEl.textContent = ""
       }, 5600)
@@ -147,6 +156,8 @@ function takeNap(){
   // add sleepy meter
   if(isNapping === true){
     alertsPanelEl.textContent = (petName + " is Already Napping")
+  } else if(gameOver === true){
+    alertsPanelEl.textContent = ("Game Over: Please Reset")
   } else if(actionOccuring === true){
     alertsPanelEl.textContent = ("Please Wait")
   } else {
@@ -174,6 +185,8 @@ function takeNap(){
 function playPet(){
   if(isPlaying === true){
     alertsPanelEl.textContent = (petName + " is Already Playing")
+  }else if(gameOver === true){
+    alertsPanelEl.textContent = ("Game Over: Please Reset")
   } else if(actionOccuring === true){
     alertsPanelEl.textContent = ("Please Wait")
   } else {
@@ -181,11 +194,13 @@ function playPet(){
     foodSupply++
     healthMeter++
     isPlaying = true
+    updateAnimation(playingAnimation)
     alertsPanelEl.textContent = (petName + " is Playing")
     render()
     setTimeout(() => {
       isPlaying = false
       actionOccuring = false
+      updateAnimation(leftFacingAnimation)
       alertsPanelEl.textContent = (petName + " is Done Playing")
     }, 5000)
     setTimeout(() => {
@@ -194,3 +209,29 @@ function playPet(){
     // add play animation
   }
 }
+
+// hunger timer experiment 
+
+
+let timeLeft = 15
+let hungerInterval = 40
+
+// i'd like this timer to not start until the name submit button has been hit
+let hungerTimer = setInterval(() => {
+  console.log(timeLeft)
+  timeLeft -= 1
+  if(hungerInterval === 100){
+    gameOver = true 
+    alertsPanelEl.textContent = petName + " Has Starved - Please Reset"
+  }
+  if(timeLeft === -1){
+    timeLeft = 15
+    hungerInterval += 10
+    hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
+  }
+  if(hungerInterval === 50 || hungerInterval === 70 || hungerInterval === 90){
+    actionOccuring == true
+    alertsPanelEl.textContent = petName + " is Hungry"
+    updateAnimation(hungryAnimation)
+  }
+}, 1000);
