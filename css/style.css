@@ -82,6 +82,8 @@ h1 {
 
 .interaction-button {
   border: 2px solid black;
+  width: 100px;
+  margin: 1px;
 }
 
 #feed-btn {
@@ -93,6 +95,10 @@ h1 {
 }
 
 #nap-btn {
+  font-family: 'Press Start 2P', cursive;
+}
+
+#pee-btn {
   font-family: 'Press Start 2P', cursive;
 }
 

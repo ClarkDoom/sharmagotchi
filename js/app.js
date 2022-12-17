@@ -11,6 +11,7 @@ let isSleeping
 let isPlaying
 let isEating
 let actionOccuring
+let isPeeing
 /*------------------------ Cached Element References ------------------------*/
 // cached buttons
 const feedBtn = document.querySelector("#feed-btn")
@@ -18,6 +19,7 @@ const playBtn = document.querySelector("#play-btn")
 const napBtn = document.querySelector("#nap-btn")
 const resetBtn = document.querySelector("#reset-btn")
 const nameSubmitBtn = document.querySelector("#submit-name")
+const peeBtn = document.querySelector("#pee-btn")
 // user input
 const nameInput = document.querySelector("#name-input")
 // used to control animation renders
@@ -48,6 +50,7 @@ playBtn.addEventListener('click', playPet)
 napBtn.addEventListener('click', takeNap)
 nameSubmitBtn.addEventListener('click', submitName)
 resetBtn.addEventListener('click', reset)
+peeBtn.addEventListener('click', goPee)
 /*-------------------------------- Functions --------------------------------*/
 init()
 
@@ -76,7 +79,7 @@ function setInitialFoodQuantity(){
 function render(){
   updateHealthMeter()
   updateFoodSupply()
-  updatePetWeight()
+  // updatePetWeight()
 }
 
 function updateHealthMeter(){
@@ -145,10 +148,11 @@ function feedPet(){
         updateAnimation(leftFacingAnimation)
         isEating = false
         actionOccuring = false
-      }, 1550)
+        alertsPanelEl.textContent = petName + " is Done Eating"
+      }, 5600)
       setTimeout(() => {
         alertsPanelEl.textContent = ""
-      }, 5600)
+      }, 7600)
     } else {
       // if time, put a sad dog animation
       alertsPanelEl.textContent = " not enough food"
@@ -211,37 +215,64 @@ function playPet(){
     }, 5000)
     setTimeout(() => {
       alertsPanelEl.textContent = ""
-    }, 10000)
+    }, 7000)
     // add play animation
+  }
+}
+
+function goPee(){
+  if(isPeeing === true){
+    alertsPanelEl.textContent = (petName + " is Already Peeing")
+  } else if(gameOver === true){
+    alertsPanelEl.textContent = ("Game Over: Please Reset")
+  } else if(actionOccuring === true){
+    alertsPanelEl.textContent = ("Please Wait")
+  } else {
+    actionOccuring = true
+    healthMeter++
+    bladderInterval = 0
+    bladderProgressBar.setAttribute("style", `width: ${bladderInterval}%;`)
+    isPeeing = true
+    alertsPanelEl.textContent = (petName + " went #1")
+    render()
+    updateAnimation(peeAnimation)
+    setTimeout(() => {
+      updateAnimation(leftFacingAnimation)
+      isPeeing = false
+      actionOccuring = false
+    }, 1200)
+    setTimeout(() => {
+      alertsPanelEl.textContent = ""
+    }, 3200)
   }
 }
 
 // hunger timer experiment 
 
 
-// let hungerTimeLeft = 15
-// let hungerInterval = 10
-// // i'd like this timer to not start until the name submit button has been hit
-// let hungerTimer = setInterval(() => {
-//   console.log(hungerTimeLeft)
-//   hungerTimeLeft -= 1
-//   if(hungerInterval === 100){
-//     gameOver = true 
-//     updateAnimation(gameOverImage)
-//     alertsPanelEl.textContent = petName + " Has Starved - Please Reset"
-        // clearInterval(hungerTimer)
-//   }
-//   if(hungerTimeLeft === -1){
-//     hungerTimeLeft = 15
-//     hungerInterval += 10
-//     hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
-//   }
-//   if(hungerInterval === 50 || hungerInterval === 90){
-//     actionOccuring == true
-//     alertsPanelEl.textContent = petName + " is Hungry"
-//     updateAnimation(hungryAnimation)
-//   }
-// }, 1000);
+let hungerTimeLeft = 15
+let hungerInterval = 10
+// i'd like this timer to not start until the name submit button has been hit
+let hungerTimer = setInterval(() => {
+  console.log(hungerTimeLeft)
+  hungerTimeLeft -= 1
+  if(hungerInterval === 100){
+    gameOver = true 
+    updateAnimation(gameOverImage)
+    alertsPanelEl.textContent = petName + " Has Starved - Please Reset"
+        clearInterval(hungerTimer)
+  }
+  if(hungerTimeLeft === -1){
+    hungerTimeLeft = 15
+    hungerInterval += 10
+    hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
+  }
+  if(hungerInterval === 50 || hungerInterval === 90){
+    actionOccuring == true
+    alertsPanelEl.textContent = petName + " is Hungry"
+    updateAnimation(hungryAnimation)
+  }
+}, 1000);
 
 // bladder meter experiement 
 let bladderTimeLeft = 15
