@@ -94,6 +94,7 @@ function updateHealthMeter(){
     gameOver = true
     // needs to pause other timers
   } else {
+    console.log('health meter: ' + healthMeter)
     healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
   }
   
@@ -203,8 +204,6 @@ function takeNap(){
   }
 }
 
-//* create a function that will allow user to play with their pet, incrementing health meter, triggering a play animation ('shar-ing' aka zoomies)
-
 function playPet(){
   if(isPlaying === true){
     alertsPanelEl.textContent = (petName + " is Already Playing")
@@ -262,38 +261,41 @@ function goPee(){
 
 // hunger timer experiment 
 
-
-let hungerTimeLeft = 15
+// if you change this variable, you must change it in the formula below
+let hungerTimeLeft = 10
 let hungerInterval = 10
 // i'd like this timer to not start until the name submit button has been hit
 let hungerTimer = setInterval(() => {
-  console.log(hungerTimeLeft)
+  console.log("hungerTimeLeft " + hungerTimeLeft)
   hungerTimeLeft -= 1
   if(hungerInterval === 100){
     gameOver = true 
     updateAnimation(gameOverImage)
-    alertsPanelEl.textContent = petName + " Has Starved - Please Reset"
+    alertsPanelEl.textContent = petName + " is Playing Dead - Please Reset"
         clearInterval(hungerTimer)
   }
   if(hungerTimeLeft === -1){
-    hungerTimeLeft = 15
+    hungerTimeLeft = 10
     hungerInterval += 10
     hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
   }
-  if(hungerInterval === 50 || hungerInterval === 90){
+  if(hungerInterval === 90 && hungerTimeLeft === 10){
     actionOccuring == true
+    healthMeter--
+    render()
     alertsPanelEl.textContent = petName + " is Hungry"
     updateAnimation(hungryAnimation)
   }
 }, 1000);
 
 // bladder meter experiement 
-let bladderTimeLeft = 15
+let bladderTimeLeft = 10
+// the % that the progress bar increases
 let bladderInterval = 10
 
 // i'd like this timer to not start until the name submit button has been hit
 let bladderTimer = setInterval(() => {
-  console.log(bladderTimeLeft)
+  console.log("bladderTimeLeft: " + bladderTimeLeft)
   bladderTimeLeft -= 1
   if(bladderInterval === 100){
     gameOver = true 
@@ -302,11 +304,13 @@ let bladderTimer = setInterval(() => {
     clearInterval(bladderTimer)
   }
   if(bladderTimeLeft === -1){
-    bladderTimeLeft = 15
+    bladderTimeLeft = 10
     bladderInterval += 10
     bladderProgressBar.setAttribute("style", `width: ${bladderInterval}%;`)
   }
-  if(bladderInterval === 80){
+  if(bladderInterval === 80 && bladderTimeLeft === 10){
+    healthMeter--
+    render()
     actionOccuring == true // probably need to add a timer to set this as false
     alertsPanelEl.textContent = petName + " needs to go #1"
   }
@@ -314,26 +318,29 @@ let bladderTimer = setInterval(() => {
 
 // sleepy meter experiment
 
-let sleepyTimeLeft = 15
+let sleepyTimeLeft = 10
 let sleepyInterval = 10
 
 // i'd like this timer to not start until the name submit button has been hit
 let sleepyTimer = setInterval(() => {
-  console.log(sleepyTimeLeft)
+  console.log("sleepyTimeLeft: " + sleepyTimeLeft)
   sleepyTimeLeft -= 1
   if(sleepyInterval === 100){
     gameOver = true 
     updateAnimation(gameOverImage)
-    alertsPanelEl.textContent = petName + " Passed Out - Please Reset"
+    alertsPanelEl.textContent = petName + " is Playing Dead - Please Reset"
     clearInterval(sleepyTimer)
   }
   if(sleepyTimeLeft === -1){
-    sleepyTimeLeft = 15
+    sleepyTimeLeft = 10
     sleepyInterval += 10
     sleepyProgressBar.setAttribute("style", `width: ${sleepyInterval}%;`)
   }
-  if(sleepyInterval === 60){
+  if(sleepyInterval === 70 && sleepyTimeLeft === 10){
     actionOccuring == true // probably need to add a timer to set this as false
+    console.log("Sleepy time left: " + sleepyTimeLeft)
+    healthMeter--
+    render()
     alertsPanelEl.textContent = petName + " is Getting Sleepy"
     updateAnimation(gettingSleepingAnimation)
   }
