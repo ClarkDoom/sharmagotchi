@@ -12,6 +12,14 @@ let isPlaying
 let isEating
 let actionOccuring
 let isPeeing
+
+// timer variables
+let hungerTimeLeft = 5 // time in seconds of how long between each hunger meter increase // if you change this variable, you must change it in the timer function below
+let hungerInterval = 10 // percentage points to increase hunger meter when timer expires
+let bladderTimeLeft = 5 // time in seconds of how long between each bladder meter increase // if you change this variable, you must change it in the timer function below
+let bladderInterval = 10 // percentage points to increase bladder meter when timer expires
+let sleepyTimeLeft = 5 // time in seconds of how long between each sleepy meter increase // if you change this variable, you must change it in the timer function below
+let sleepyInterval = 10 // percentage points to increase bladder meter when timer expires
 /*------------------------ Cached Element References ------------------------*/
 // cached buttons
 const feedBtn = document.querySelector("#feed-btn")
@@ -37,7 +45,7 @@ const healthMeterEl = document.querySelector("#health-meter")
 const petWeightEl = document.querySelector("#pet-weight")
 const mainDisplayEl = document.querySelector(".main-display")
 // cached animations
-const leftFacingAnimation = "../assets/left-facing.png"
+const leftFacingAnimation = "../assets/left-facing.gif"
 const happyAnimation = "../assets/happy-animation.gif"
 const eatingAnimation = "../assets/eating-animation.gif"
 const sleepingAnimation = "../assets/sleeping-animation.gif"
@@ -46,6 +54,13 @@ const hungryAnimation = "../assets/hungry-animation.gif"
 const gameOverImage = "../assets/game-over.png"
 const peeAnimation = "../assets/pee-animation.gif"
 const gettingSleepingAnimation = "../assets/getting-sleepy-animation.gif"
+// cached audio
+const nameSubmitSound = new Audio("../assets/name-submit.mp3")
+const notificationUpSound = new Audio("../assets/notification-up.mp3")
+const notificationDownSound = new Audio("../assets/notification-down.mp3")
+const alertSound = new Audio("../assets/alert-sound.mp3")
+const successSound = new Audio("../assets/success-sound.mp3")
+const gameOverSound = new Audio("../assets/game-over.mp3")
 /*----------------------------- Event Listeners -----------------------------*/
 feedBtn.addEventListener('click', feedPet)
 playBtn.addEventListener('click', playPet)
@@ -87,11 +102,14 @@ function render(){
 
 function updateHealthMeter(){
   if(healthMeter >= 10){
-    alertsPanelEl.textContent = (petName + " has Been Successfully Raised")
-    confetti.start(1500)
+    successSound.volume = .3
+    successSound.play()
+    alertsPanelEl.textContent = (petName + " has Been Successfully Cared For")
+    confetti.start(3000)
     healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
     updateAnimation(happyAnimation)
     gameOver = true
+    // the below clearIntervals are not working - i believe because the intervals are within the submit name function so there's some sort of scope issue occuring
     clearInterval(hungerTimer)
     clearInterval(bladderTimer)
     clearInterval(sleepyTimer)
@@ -124,6 +142,9 @@ function reset(){
 }
 
 function submitName(){
+  
+  nameSubmitSound.volume = .30
+  nameSubmitSound.play()
   petName = nameInput.value
   nameEl.textContent = ("Name: "+ petName)
   statsPanelEl.removeChild(nameInput)
@@ -137,41 +158,61 @@ function submitName(){
   setTimeout(() => {
     alertsPanelEl.textContent = ""
   }, 5000)
+
   // hunger timer  
-  let hungerTimeLeft = 10 // time in seconds of how long between each hunger meter increase // if you change this variable, you must change it in the timer function below
-  let hungerInterval = 10 // percentage points to increase hunger meter when timer expires
   let hungerTimer = setInterval(() => {
-    console.log("hungerTimeLeft " + hungerTimeLeft)
+    console.log("hungerInterval: " + hungerInterval)
+      console.log("hungerTimeLeft: " + hungerTimeLeft)
+    if(healthMeter === 10){
+      clearInterval(hungerTimer)
+      clearInterval(bladderTimer)
+      clearInterval(sleepyTimer)
+    }
+    // console.log("hungerTimeLeft " + hungerTimeLeft)
     hungerTimeLeft -= 1
     if(hungerInterval === 100){
       gameOver = true 
       updateAnimation(gameOverImage)
+      gameOverSound.volume = .3
+      gameOverSound.play()
+      // add game over sound
       alertsPanelEl.textContent = petName + " is Playing Dead - Please Reset"
       clearInterval(hungerTimer)
       clearInterval(bladderTimer)
       clearInterval(sleepyTimer)
     }
     if(hungerTimeLeft === -1){
-      hungerTimeLeft = 10
+      hungerTimeLeft = 5
       hungerInterval += 10
+      console.log("hungerInterval: " + hungerInterval)
+      console.log("healthMeter: " + healthMeter)
       hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
     }
-    if(hungerInterval === 90 && hungerTimeLeft === 10){
+    if(hungerInterval === 60 && hungerTimeLeft === 5){
       actionOccuring == true
       healthMeter--
       render()
+      alertSound.volume = .3
+      alertSound.play()
       alertsPanelEl.textContent = petName + " is Hungry"
       updateAnimation(hungryAnimation)
     }
   }, 1000);
+
+
   // bladder meter  
-  let bladderTimeLeft = 10 // time in seconds of how long between each bladder meter increase // if you change this variable, you must change it in the timer function below
-  let bladderInterval = 10 // percentage points to increase bladder meter when timer expires
   let bladderTimer = setInterval(() => {
-    console.log("bladderTimeLeft: " + bladderTimeLeft)
+    if(healthMeter === 10){
+      clearInterval(hungerTimer)
+      clearInterval(bladderTimer)
+      clearInterval(sleepyTimer)
+    }
+    // console.log("bladderTimeLeft: " + bladderTimeLeft)
     bladderTimeLeft -= 1
     if(bladderInterval === 100){
       gameOver = true 
+      gameOverSound.volume = .3
+      gameOverSound.play()
       updateAnimation(peeAnimation)
       alertsPanelEl.textContent = petName + " Had an Accident - Please Reset"
       clearInterval(hungerTimer)
@@ -179,25 +220,32 @@ function submitName(){
       clearInterval(sleepyTimer)
     }
     if(bladderTimeLeft === -1){
-      bladderTimeLeft = 10
+      bladderTimeLeft = 5
       bladderInterval += 10
       bladderProgressBar.setAttribute("style", `width: ${bladderInterval}%;`)
     }
-    if(bladderInterval === 80 && bladderTimeLeft === 10){
+    if(bladderInterval === 60 && bladderTimeLeft === 5){
       healthMeter--
       render()
       actionOccuring == true // probably need to add a timer to set this as false
+      alertSound.volume = .3
+      alertSound.play()
       alertsPanelEl.textContent = petName + " needs to go #1"
     }
   }, 1000);
   // sleepy meter 
-  let sleepyTimeLeft = 10 // time in seconds of how long between each sleepy meter increase // if you change this variable, you must change it in the timer function below
-  let sleepyInterval = 10 // percentage points to increase bladder meter when timer expires
   let sleepyTimer = setInterval(() => {
-    console.log("sleepyTimeLeft: " + sleepyTimeLeft)
+    if(healthMeter === 10){
+      clearInterval(hungerTimer)
+      clearInterval(bladderTimer)
+      clearInterval(sleepyTimer)
+    }
+    // console.log("sleepyTimeLeft: " + sleepyTimeLeft)
     sleepyTimeLeft -= 1
     if(sleepyInterval === 100){
       gameOver = true 
+      gameOverSound.volume = .3
+      gameOverSound.play()
       updateAnimation(gameOverImage)
       alertsPanelEl.textContent = petName + " is Playing Dead - Please Reset"
       clearInterval(hungerTimer)
@@ -205,15 +253,17 @@ function submitName(){
       clearInterval(sleepyTimer)
     }
     if(sleepyTimeLeft === -1){
-      sleepyTimeLeft = 10
+      sleepyTimeLeft = 5
       sleepyInterval += 10
       sleepyProgressBar.setAttribute("style", `width: ${sleepyInterval}%;`)
     }
-    if(sleepyInterval === 70 && sleepyTimeLeft === 10){
+    if(sleepyInterval === 60 && sleepyTimeLeft === 5){
       actionOccuring == true // probably need to add a timer to set this as false
       console.log("Sleepy time left: " + sleepyTimeLeft)
       healthMeter--
       render()
+      alertSound.volume = .3
+      alertSound.play()
       alertsPanelEl.textContent = petName + " is Getting Sleepy"
       updateAnimation(gettingSleepingAnimation)
     }
@@ -236,10 +286,14 @@ function feedPet(){
       hungerInterval = 0
       hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
       isEating = true
-      alertsPanelEl.textContent = ("You Fed " + petName)
+      notificationUpSound.volume = .3
+      notificationUpSound.play()
+      alertsPanelEl.textContent = (petName + " is Eating")
       render()
       updateAnimation(eatingAnimation)
       setTimeout(() => {
+        notificationDownSound.volume = .3
+        notificationDownSound.play()
         updateAnimation(leftFacingAnimation)
         isEating = false
         actionOccuring = false
@@ -250,6 +304,7 @@ function feedPet(){
       }, 7600)
     } else {
       // if time, put a sad dog animation
+      // add error sound
       alertsPanelEl.textContent = " not enough food"
     }
   }
@@ -274,9 +329,13 @@ function takeNap(){
     sleepyProgressBar.setAttribute("style", `width: ${sleepyInterval}%;`)
     render()
     updateAnimation(sleepingAnimation)
+    notificationUpSound.volume = .3
+    notificationUpSound.play()
     alertsPanelEl.textContent = (petName + " is Napping")
     setTimeout(() => {
       updateAnimation(leftFacingAnimation)
+      notificationDownSound.volume = .3
+      notificationDownSound.play()
       alertsPanelEl.textContent = (petName +" is Done Napping")
       isNapping = false
       actionOccuring = false
@@ -300,12 +359,16 @@ function playPet(){
     healthMeter++
     isPlaying = true
     updateAnimation(playingAnimation)
+    notificationUpSound.volume = .3
+    notificationUpSound.play()
     alertsPanelEl.textContent = (petName + " is Playing")
     render()
     setTimeout(() => {
       isPlaying = false
       actionOccuring = false
       updateAnimation(leftFacingAnimation)
+      notificationDownSound.volume = .3
+      notificationDownSound.play()
       alertsPanelEl.textContent = (petName + " is Done Playing")
     }, 5000)
     setTimeout(() => {
@@ -328,17 +391,22 @@ function goPee(){
     bladderInterval = 0
     bladderProgressBar.setAttribute("style", `width: ${bladderInterval}%;`)
     isPeeing = true
-    alertsPanelEl.textContent = (petName + " went #1")
+    notificationUpSound.volume = .3
+    notificationUpSound.play()
+    alertsPanelEl.textContent = (petName + " is Going #1")
     render()
     updateAnimation(peeAnimation)
     setTimeout(() => {
+      notificationDownSound.volume = .3
+      notificationDownSound.play()
+      alertsPanelEl.textContent = (petName + " is Done Going #1")
       updateAnimation(leftFacingAnimation)
       isPeeing = false
       actionOccuring = false
-    }, 1200)
+    }, 2400)
     setTimeout(() => {
       alertsPanelEl.textContent = ""
-    }, 3200)
+    }, 4400)
   }
 }
 
