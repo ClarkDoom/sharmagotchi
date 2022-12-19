@@ -179,7 +179,7 @@ function submitName(){
     if(hungerInterval === 100){
       gameOver = true 
       updateAnimation(gameOverImage)
-      gameOverSound.volume = .3
+      gameOverSound.volume = .1
       gameOverSound.play()
       // add game over sound
       alertsPanelEl.textContent = petName + " is Playing Dead - Please Reset"
