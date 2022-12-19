@@ -14,12 +14,11 @@
 </head>
 <body>
   
-  <h1>Sharmagotchi</h1>
+  <p id="header">Sharmagotchi</p>
 
-  <div class="display-panels">
+  <!-- <div class="display-panels"> -->
     <div class="main-display">
       <img src="./assets/left-facing.gif" id="animation" width="40%">
-    </div>
     <div class="stats-panel">
       <h3 id="stats-header">Stats</h3>
       <p id="name">Name:</p>
@@ -57,18 +56,18 @@
       <!-- <p id="age">Age: 0</p> -->
       <p id="food-supply"></p>
       <button id="reset-btn">Reset</button></div>
-    <div class="button-panel">
-      <button class="interaction-button" id="feed-btn">Feed</button>
-      <button class="interaction-button" id="play-btn">Play</button>
-      <button class="interaction-button" id="nap-btn">Nap</button>
-      <button class="interaction-button" id="pee-btn">Go #1</button>
+      <div id="alerts-div">
+        <p>ALERTS!</h1>
+          <div id="alerts-panel"></div>
+      </div>
+      <div class="button-panel">
+        <button class="interaction-button" id="feed-btn">Feed</button>
+        <button class="interaction-button" id="play-btn">Play</button>
+        <button class="interaction-button" id="nap-btn">Nap</button>
+        <button class="interaction-button" id="pee-btn">Go #1</button>
+      </div>
     </div>
-    <div id="alerts-div">
-      <p>ALERTS!</h1>
-      <div id="alerts-panel"></div>
-    </div>
-  </div>
-  
+  <!-- </div> -->
   
   <div id="journal">
     <h3>Journal</h3>
