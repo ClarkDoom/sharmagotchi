@@ -2,6 +2,7 @@
 
 // not sure if this should be a constantr
 const journal = []
+// const journalReverse = journal.reverse() 
 
 /*---------------------------- Variables (state) ----------------------------*/
 let petName
@@ -264,7 +265,7 @@ function submitName(){
       gameOverSound.volume = .3
       gameOverSound.play()
       updateAnimation(sadPeiAnimation)
-      alertsPanelEl.textContent = petName + " is Playing Dead - Please Reset"
+      alertsPanelEl.textContent = petName + " is Too Sleepy - Please Reset"
       clearInterval(hungerTimer)
       clearInterval(bladderTimer)
       clearInterval(sleepyTimer)

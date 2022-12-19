@@ -5,11 +5,20 @@ when on mobile, have the background of the main display remove and just be a col
 
 */
 
-/* 768px is a common "breakpoint" width for tablets */
- /* @media only screen and (min-width: 768px) {
-  #alerts-div{
-    max-width: 360px;
-}  */
+/* this may not be the best way to do this but it works  */
+ul {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+ul > li {
+    -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    margin-right: 20px;
+    background-color: #fca400;
+    border-radius: 10px;
+}
 
 body {
   font-family: 'Press Start 2P', cursive;
@@ -42,7 +51,6 @@ body {
   background-size:cover;
   /* min-width: 300px;
   min-height: 300px; */
-  align-self: flex-start;
   border-radius: 20px;
   border: 5px solid black;
   /* experiment */
@@ -62,7 +70,7 @@ body {
   margin-right: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
-  padding: 5px;
+  padding: 10px;
   /* align-content: center; */
   /* justify-content: center; */
   /* align-items: center; */
@@ -83,14 +91,16 @@ body {
   /* align-self: center; */
 }
 
-#animation-panel{
+#animation{
   /* max-width: 180px; */
   /* min-height: 100px; */
   /* just added */
   /* max-width: 300px; */
-  align-self: flex-end;
+  align-self: center;
   flex-grow: 2;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  margin-top: 50px;
+
 
 }
 
@@ -141,9 +151,10 @@ body {
 
 #alerts-div {
   background-color: #ffbc42;
-  max-width: 160px;
   /* max-width: 100px; */
+  min-width: 150px;
   min-height: 80px;
+  max-width: 150px;
   float: left;
   padding: 10px;
   border-radius: 10px;
@@ -167,6 +178,8 @@ body {
   align-content: left;
   text-align: center;
   font-size: small;
+  /* max-height:250px;
+  overflow-y:scroll; */
 }
 
 #journal-items {
@@ -177,14 +190,10 @@ li {
   padding: 5px;
 }
 
-#animation {
-  /* margin-top: 280px; */
-  min-width: 50px;
-}
 
 /* Health Meter */
 .health-wrapper {
-  width: 100px;
+  width: 95%;
 }
 .health-progress-bar {
   width: 100%;
@@ -208,7 +217,7 @@ li {
 
 /* Hunger Meter */
 .hunger-wrapper {
-  width: 100px;
+  width:95%;
 }
 .hunger-progress-bar {
   width: 100%;
@@ -232,7 +241,7 @@ li {
 
 /* Bladder Meter  */
 .bladder-wrapper {
-  width: 100px;
+  width: 95%;
 }
 .bladder-progress-bar {
   width: 100%;
@@ -256,7 +265,7 @@ li {
 
 /* Sleepy Meter */
 .sleepy-wrapper {
-  width: 100px;
+  width: 95%;
 }
 .sleepy-progress-bar {
   width: 100%;
@@ -276,3 +285,13 @@ li {
   border-radius: 3px;
   
   transition: width 00ms ease-in-out;
+}
+
+/* 768px is a common "breakpoint" width for tablets */
+@media only screen and (min-width: 768px) {
+    
+  .alerts-panel {
+    color: white;
+  }
+
+} 
