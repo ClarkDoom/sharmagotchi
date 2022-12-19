@@ -31,6 +31,7 @@ const nameSubmitBtn = document.querySelector("#submit-name")
 const peeBtn = document.querySelector("#pee-btn")
 // user input
 const nameInput = document.querySelector("#name-input")
+const namePanel = document.querySelector("#name-panel")
 // used to control animation renders
 const animationImg = document.querySelector("#animation")
 const healthProgressBar = document.querySelector(".health-progress-bar-fill")
@@ -149,8 +150,8 @@ function submitName(){
   nameSubmitSound.play()
   petName = nameInput.value
   nameEl.textContent = ("Name: "+ petName)
-  statsPanelEl.removeChild(nameInput)
-  statsPanelEl.removeChild(nameSubmitBtn)
+  namePanel.removeChild(nameInput)
+  namePanel.removeChild(nameSubmitBtn)
   confetti.start(1500)
   updateAnimation(happyAnimation)
   setTimeout(() => {

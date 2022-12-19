@@ -45,7 +45,8 @@ body {
 
 .main-display {
   background-color: white;
-  background-image: url(../assets/parkbackground.jpeg);
+  /* background-image: url(../assets/parkbackground.jpeg); */
+  background-image: url(../assets/pixel-grass.png);
   background-repeat: no-repeat;
   background-size:cover;
   min-width: 300px;
@@ -65,6 +66,19 @@ body {
   float: right;
   /* margin-bottom: 10px; */
   font-size: xx-small;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+#name-panel {
+  border-radius: 10px;
+  border: 2px solid black;
+  font-size: xx-small;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #ffbc42;
 }
 
 #reset-btn{
@@ -76,13 +90,15 @@ body {
 .button-panel {
   /* order: 3; */
   background-color: #ffbc42;
-  max-width: 200px;
+  /* max-width: 200px; */
+  min-width: 300px;
   /* i think i need to remove this but it causes problems */
   /* float: right; */
   padding: 10px;
   border-radius: 10px;
   border: 5px solid black;
   /* align-self: center; */
+  margin-top: 10px;
 }
 
 .interaction-button {
@@ -90,6 +106,8 @@ body {
   /* min-width: 10px; */
   margin: 1px;
   font-size: xx-small;
+  height: 40px;
+  width: 60px;
 }
 
 #submit-name {
@@ -110,6 +128,7 @@ body {
 
 #alerts-div {
   background-color: #ffbc42;
+  min-width: 100px;
   max-width: 100px;
   min-height: 80px;
   float: left;
@@ -119,6 +138,8 @@ body {
   /* margin-top: 10px; */
   /* vertical-align: middle; */
   font-size: xx-small;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 #journal {
@@ -143,6 +164,7 @@ li {
 
 #animation {
   /* margin-top: 280px; */
+  min-width: 50px;
 }
 
 /* Health Meter */

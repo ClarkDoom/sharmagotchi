@@ -15,15 +15,16 @@
 <body>
   
   <p id="header">Sharmagotchi</p>
-
+  <div id="name-panel">
+    <p id="name">Name:</p>
+    <input type="text" id="name-input" placeholder="Enter Pet Name"></input>
+    <button class="interaction-button" id="submit-name">Play</button>
+  </div>
   <!-- <div class="display-panels"> -->
     <div class="main-display">
       <img src="./assets/left-facing.gif" id="animation" width="40%">
     <div class="stats-panel">
       <h3 id="stats-header">Stats</h3>
-      <p id="name">Name:</p>
-      <input type="text" id="name-input" placeholder="Enter Pet Name"></input>
-      <button class="interaction-button" id="submit-name">Play</button>
      <!-- health meter elements -->
       <p id="health-meter">Health Meter:</p>
       <div class="health-wrapper">
@@ -60,12 +61,12 @@
         <p>ALERTS!</h1>
           <div id="alerts-panel"></div>
       </div>
-      <div class="button-panel">
-        <button class="interaction-button" id="feed-btn">Feed</button>
-        <button class="interaction-button" id="play-btn">Play</button>
-        <button class="interaction-button" id="nap-btn">Nap</button>
-        <button class="interaction-button" id="pee-btn">Go #1</button>
-      </div>
+    </div>
+    <div class="button-panel">
+      <button class="interaction-button" id="feed-btn">Feed</button>
+      <button class="interaction-button" id="play-btn">Play</button>
+      <button class="interaction-button" id="nap-btn">Nap</button>
+      <button class="interaction-button" id="pee-btn">Go#1</button>
     </div>
   <!-- </div> -->
   
