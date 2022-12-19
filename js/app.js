@@ -48,6 +48,7 @@ const petWeightEl = document.querySelector("#pet-weight")
 const mainDisplayEl = document.querySelector(".main-display")
 const journalEl = document.querySelector("#journal")
 const journalItemsEl = document.querySelector("#journal-items")
+const animationPanelEl = document.querySelector("#animation-panel")
 // cached animations
 const leftFacingAnimation = "../assets/left-facing.gif"
 const happyAnimation = "../assets/happy-animation.gif"
