@@ -162,9 +162,9 @@ function submitName(){
   let liContent = ("🎉🎊 You Named your Pet " + petName + "!")
   li.innerText = liContent
   journalItemsEl.appendChild(li)
-  setTimeout(() => {
-    alertsPanelEl.textContent = ""
-  }, 5000)
+  // setTimeout(() => {
+  //   alertsPanelEl.textContent = ""
+  // }, 5000)
 
   //* hunger timer  
   let hungerTimer = setInterval(() => {
@@ -326,9 +326,9 @@ function feedPet(){
         alertsPanelEl.textContent = petName + " is Done Eating"
         
       }, 5600)
-      setTimeout(() => {
-        alertsPanelEl.textContent = ""
-      }, 7600)
+      // setTimeout(() => {
+      //   alertsPanelEl.textContent = ""
+      // }, 7600)
     } else {
       // if time, put a sad dog animation
       // add error sound
@@ -371,9 +371,9 @@ function takeNap(){
       isNapping = false
       actionOccuring = false
     }, 6800)
-    setTimeout(() => {
-      alertsPanelEl.textContent = ""
-    }, 8800)
+    // setTimeout(() => {
+    //   alertsPanelEl.textContent = ""
+    // }, 8800)
   }
 }
 
@@ -408,9 +408,9 @@ function playPet(){
       notificationDownSound.play()
       alertsPanelEl.textContent = (petName + " is Done Playing")
     }, 5000)
-    setTimeout(() => {
-      alertsPanelEl.textContent = ""
-    }, 7000)
+    // setTimeout(() => {
+    //   alertsPanelEl.textContent = ""
+    // }, 7000)
     // add play animation
   }
 }
@@ -447,9 +447,9 @@ function goPee(){
       isPeeing = false
       actionOccuring = false
     }, 2400)
-    setTimeout(() => {
-      alertsPanelEl.textContent = ""
-    }, 4400)
+    // setTimeout(() => {
+    //   alertsPanelEl.textContent = ""
+    // }, 4400)
   }
 }
 
