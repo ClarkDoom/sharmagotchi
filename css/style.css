@@ -113,15 +113,13 @@ body {
   border: 2px solid black;
   /* min-width: 10px; */
   margin: 1px;
-  font-size: 15px;
+  font-size: 10px;
   height: 40px;
   width: 72px;
-  text-align: center;
 }
 
 #submit-name {
   font-family: 'Press Start 2P', cursive;
-  text-align: center;
 }
 #feed-btn {
   font-family: 'Press Start 2P', cursive;
