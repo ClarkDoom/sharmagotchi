@@ -76,7 +76,7 @@ body {
 .button-panel {
   /* order: 3; */
   background-color: #ffbc42;
-  max-width: 350px;
+  max-width: 200px;
   /* i think i need to remove this but it causes problems */
   /* float: right; */
   padding: 10px;
@@ -110,7 +110,7 @@ body {
 
 #alerts-div {
   background-color: #ffbc42;
-  min-width: 100px;
+  max-width: 100px;
   min-height: 80px;
   float: left;
   /* padding: 10px; */
