@@ -184,6 +184,8 @@ body {
   font-size: small;
   /* max-height:250px;
   overflow-y:scroll; */
+  max-height: 200px;
+  overflow-y: scroll;
 }
 
 #journal-items {
