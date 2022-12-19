@@ -310,6 +310,7 @@ function feedPet(){
       isEating = true
       notificationUpSound.volume = .3
       notificationUpSound.play()
+      alertsPanelEl.textContent = petName + " is Eating"
       // journal experiment
       let li = document.createElement("li")
       let liContent = ("🍖🍗 " + petName + " ate!")
