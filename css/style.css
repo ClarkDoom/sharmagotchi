@@ -67,6 +67,7 @@ body {
   /* justify-content: center; */
   /* align-items: center; */
   /* justify-items: center; */
+  /* text-align: center; */
 
 
 }
@@ -82,11 +83,15 @@ body {
   /* align-self: center; */
 }
 
-#animation{
+#animation-panel{
   /* max-width: 180px; */
   min-height: 100px;
+  /* just added */
+  /* max-width: 300px; */
   align-self: flex-end;
   flex-grow: 2;
+  border: 2px solid black;
+
 }
 
 #reset-btn{
