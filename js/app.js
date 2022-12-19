@@ -1,6 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 
 // not sure if this should be a constantr
+const journal = []
 
 /*---------------------------- Variables (state) ----------------------------*/
 let petName
@@ -44,6 +45,8 @@ const alertsPanelEl = document.querySelector("#alerts-panel")
 const healthMeterEl = document.querySelector("#health-meter")
 const petWeightEl = document.querySelector("#pet-weight")
 const mainDisplayEl = document.querySelector(".main-display")
+const journalEl = document.querySelector("#journal")
+const journalItemsEl = document.querySelector("#journal-items")
 // cached animations
 const leftFacingAnimation = "../assets/left-facing.gif"
 const happyAnimation = "../assets/happy-animation.gif"
@@ -86,7 +89,6 @@ function init(){
   updateHealthMeter()
   // uncomment out if pet weight functionality is added
   // updatePetWeight()
-  // need to add initial animation with id of #animation
 }
 
 function setInitialFoodQuantity(){
@@ -154,12 +156,16 @@ function submitName(){
   setTimeout(() => {
     updateAnimation(leftFacingAnimation)
   }, 3000)
-  alertsPanelEl.textContent = ("You Named your Pet " + petName)
+  alertsPanelEl.textContent = ("Have Fun and Good Luck!")
+  let li = document.createElement("li")
+  let liContent = ("🎉🎊 You Named your Pet " + petName + "!")
+  li.innerText = liContent
+  journalItemsEl.appendChild(li)
   setTimeout(() => {
     alertsPanelEl.textContent = ""
   }, 5000)
 
-  // hunger timer  
+  //* hunger timer  
   let hungerTimer = setInterval(() => {
     console.log("hungerInterval: " + hungerInterval)
       console.log("hungerTimeLeft: " + hungerTimeLeft)
@@ -194,7 +200,11 @@ function submitName(){
       render()
       alertSound.volume = .3
       alertSound.play()
-      alertsPanelEl.textContent = petName + " is Hungry"
+      alertsPanelEl.textContent = petName + " is Hungry - Feed Soon"
+      let li = document.createElement("li")
+      let liContent = "⚠️⚠️ HUNGER ALERT: Feed Soon! ⚠️⚠️"
+      li.innerText = liContent
+      journalItemsEl.appendChild(li)
       updateAnimation(hungryAnimation)
     }
   }, 1000);
@@ -231,6 +241,10 @@ function submitName(){
       alertSound.volume = .3
       alertSound.play()
       alertsPanelEl.textContent = petName + " needs to go #1"
+      let li = document.createElement("li")
+      let liContent = ("⚠️⚠️ BATHROOM ALERT: Go #1 Soon! ⚠️⚠️")
+      li.innerText = liContent
+      journalItemsEl.appendChild(li)
     }
   }, 1000);
   // sleepy meter 
@@ -264,7 +278,11 @@ function submitName(){
       render()
       alertSound.volume = .3
       alertSound.play()
-      alertsPanelEl.textContent = petName + " is Getting Sleepy"
+      alertsPanelEl.textContent = petName + " is Getting Sleepy - Nap Soon"
+      let li = document.createElement("li")
+      let liContent = ("⚠️⚠️ SLEEPY ALERT: Take a Nap Soon! ⚠️⚠️")
+      li.innerText = liContent
+      journalItemsEl.appendChild(li)
       updateAnimation(gettingSleepingAnimation)
     }
   }, 1000);
@@ -288,9 +306,13 @@ function feedPet(){
       isEating = true
       notificationUpSound.volume = .3
       notificationUpSound.play()
-      alertsPanelEl.textContent = (petName + " is Eating")
-      render()
+      // journal experiment
+      let li = document.createElement("li")
+      let liContent = ("🍖🍗 " + petName + " ate!")
+      li.innerText = liContent
+      journalItemsEl.appendChild(li)
       updateAnimation(eatingAnimation)
+      render()
       setTimeout(() => {
         notificationDownSound.volume = .3
         notificationDownSound.play()
@@ -298,6 +320,7 @@ function feedPet(){
         isEating = false
         actionOccuring = false
         alertsPanelEl.textContent = petName + " is Done Eating"
+        
       }, 5600)
       setTimeout(() => {
         alertsPanelEl.textContent = ""
@@ -332,6 +355,10 @@ function takeNap(){
     notificationUpSound.volume = .3
     notificationUpSound.play()
     alertsPanelEl.textContent = (petName + " is Napping")
+    let li = document.createElement("li")
+    let liContent = ("💤😴 " + petName + " Took a Nap!")
+    li.innerText = liContent
+    journalItemsEl.appendChild(li)
     setTimeout(() => {
       updateAnimation(leftFacingAnimation)
       notificationDownSound.volume = .3
@@ -362,6 +389,10 @@ function playPet(){
     notificationUpSound.volume = .3
     notificationUpSound.play()
     alertsPanelEl.textContent = (petName + " is Playing")
+    let li = document.createElement("li")
+    let liContent = ("🐾🐾 " + petName + " Played!")
+    li.innerText = liContent
+    journalItemsEl.appendChild(li)
     render()
     setTimeout(() => {
       isPlaying = false
@@ -394,6 +425,10 @@ function goPee(){
     notificationUpSound.volume = .3
     notificationUpSound.play()
     alertsPanelEl.textContent = (petName + " is Going #1")
+    let li = document.createElement("li")
+    let liContent = ("🚽🧻 " + petName + " Went to the Bathroom!")
+    li.innerText = liContent
+    journalItemsEl.appendChild(li)
     render()
     updateAnimation(peeAnimation)
     setTimeout(() => {
