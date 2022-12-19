@@ -289,6 +289,9 @@ function submitName(){
 }
 
 function feedPet(){
+  if(petName === undefined){
+    alertsPanelEl.textContent = ("Pleae Enter a Name to Start")
+  } else 
   if(isEating === true){
     alertsPanelEl.textContent = (petName + " is Already Eating")
   } else if(gameOver === true){
@@ -334,10 +337,10 @@ function feedPet(){
 }
 
 // level up by having a sleepy meter to indicate when your pet needs sleep
-function takeNap(){
-  // use timer to increment a sleep bar, if sleep bar is filled you lose, taking naps erases sleep bar
-  // add sleepy meter
-  if(isNapping === true){
+function takeNap(){  
+  if(petName === undefined){
+    alertsPanelEl.textContent = ("Pleae Enter a Name to Start")
+  } else if(isNapping === true){
     alertsPanelEl.textContent = (petName + " is Already Napping")
   } else if(gameOver === true){
     alertsPanelEl.textContent = ("Game Over: Please Reset")
@@ -374,7 +377,9 @@ function takeNap(){
 }
 
 function playPet(){
-  if(isPlaying === true){
+  if(petName === undefined){
+    alertsPanelEl.textContent = ("Pleae Enter a Name to Start")
+  } else if(isPlaying === true){
     alertsPanelEl.textContent = (petName + " is Already Playing")
   }else if(gameOver === true){
     alertsPanelEl.textContent = ("Game Over: Please Reset")
@@ -390,7 +395,7 @@ function playPet(){
     notificationUpSound.play()
     alertsPanelEl.textContent = (petName + " is Playing")
     let li = document.createElement("li")
-    let liContent = ("🐾🐾 " + petName + " Played!")
+    let liContent = ("🐾🛝 " + petName + " Played!")
     li.innerText = liContent
     journalItemsEl.appendChild(li)
     render()
@@ -410,7 +415,9 @@ function playPet(){
 }
 
 function goPee(){
-  if(isPeeing === true){
+  if(petName === undefined){
+    alertsPanelEl.textContent = ("Pleae Enter a Name to Start")
+  } else if(isPeeing === true){
     alertsPanelEl.textContent = (petName + " is Already Peeing")
   } else if(gameOver === true){
     alertsPanelEl.textContent = ("Game Over: Please Reset")
