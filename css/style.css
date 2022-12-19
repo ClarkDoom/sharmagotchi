@@ -81,6 +81,10 @@ body {
   background-color: #ffbc42;
 }
 
+#animation-panel{
+  border: 1px solid black;
+}
+
 #reset-btn{
   font-family: 'Press Start 2P', cursive;
   border: 2px solid black;
