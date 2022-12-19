@@ -58,6 +58,7 @@ const hungryAnimation = "../assets/hungry-animation.gif"
 const gameOverImage = "../assets/game-over.png"
 const peeAnimation = "../assets/pee-animation.gif"
 const gettingSleepingAnimation = "../assets/getting-sleepy-animation.gif"
+const sadPeiAnimation = "../assets/sad-pei.gif"
 // cached audio
 const nameSubmitSound = new Audio("../assets/name-submit.mp3")
 const notificationUpSound = new Audio("../assets/notification-up.mp3")
@@ -261,7 +262,7 @@ function submitName(){
       gameOver = true 
       gameOverSound.volume = .3
       gameOverSound.play()
-      updateAnimation(gameOverImage)
+      updateAnimation(sadPeiAnimation)
       alertsPanelEl.textContent = petName + " is Playing Dead - Please Reset"
       clearInterval(hungerTimer)
       clearInterval(bladderTimer)
