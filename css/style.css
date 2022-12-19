@@ -64,12 +64,13 @@ body {
   border: 5px solid black;
   float: right;
   /* margin-bottom: 10px; */
-  font-size: 11px;
+  font-size: xx-small;
 }
 
 #reset-btn{
   font-family: 'Press Start 2P', cursive;
   border: 2px solid black;
+  font-size: xx-small;
 }
 
 .button-panel {
@@ -88,6 +89,7 @@ body {
   border: 2px solid black;
   /* min-width: 10px; */
   margin: 1px;
+  font-size: xx-small;
 }
 
 #submit-name {
@@ -116,6 +118,7 @@ body {
   border: 5px solid black;
   /* margin-top: 10px; */
   /* vertical-align: middle; */
+  font-size: xx-small;
 }
 
 #journal {
@@ -127,6 +130,7 @@ body {
   /* order: 4; */
   align-content: left;
   text-align: center;
+  font-size: small;
 }
 
 #journal-items {
