@@ -83,6 +83,7 @@ body {
 
 #animation-panel{
   border: 1px solid black;
+  width: 120px
 }
 
 #reset-btn{
