@@ -91,6 +91,10 @@ body {
   /* align-self: center; */
 }
 
+#welcome-message-2 {
+  text-align:justify;
+}
+
 #animation{
   /* max-width: 180px; */
   /* min-height: 100px; */

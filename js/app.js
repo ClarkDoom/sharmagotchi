@@ -50,6 +50,8 @@ const mainDisplayEl = document.querySelector(".main-display")
 const journalEl = document.querySelector("#journal")
 const journalItemsEl = document.querySelector("#journal-items")
 const animationPanelEl = document.querySelector("#animation-panel")
+const welcomeMessage1 = document.querySelector("#welcome-message-1")
+const welcomeMessage2 = document.querySelector("#welcome-message-2")
 // cached animations
 const leftFacingAnimation = "../assets/left-facing.gif"
 const happyAnimation = "../assets/happy-animation.gif"
@@ -155,6 +157,8 @@ function submitName(){
   nameEl.textContent = ("Name: "+ petName)
   namePanel.removeChild(nameInput)
   namePanel.removeChild(nameSubmitBtn)
+  namePanel.removeChild(welcomeMessage1)
+  namePanel.removeChild(welcomeMessage2)
   confetti.start(1500)
   updateAnimation(happyAnimation)
   setTimeout(() => {
