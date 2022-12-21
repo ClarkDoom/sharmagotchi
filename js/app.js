@@ -1,8 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 
-// not sure if this should be a constantr
+// not sure if this should be a constant
 const journal = []
-// const journalReverse = journal.reverse() 
 
 /*---------------------------- Variables (state) ----------------------------*/
 let petName
@@ -80,7 +79,6 @@ peeBtn.addEventListener('click', goPee)
 /*-------------------------------- Functions --------------------------------*/
 init()
 
-
 function init(){
   healthMeter = 1
   healthProgressBar.setAttribute("style", "width: 10%;")
@@ -93,8 +91,6 @@ function init(){
   gameOver = false
   setInitialFoodQuantity()
   updateHealthMeter()
-  // uncomment out if pet weight functionality is added
-  // updatePetWeight()
 }
 
 function setInitialFoodQuantity(){
@@ -105,7 +101,6 @@ function setInitialFoodQuantity(){
 function render(){
   updateHealthMeter()
   updateFoodSupply()
-  // updatePetWeight()
 }
 
 function updateHealthMeter(){
@@ -122,7 +117,6 @@ function updateHealthMeter(){
     clearInterval(bladderTimer)
     clearInterval(sleepyTimer)
   } else {
-    console.log('health meter: ' + healthMeter)
     healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
   }
   
@@ -130,10 +124,6 @@ function updateHealthMeter(){
 function updateFoodSupply(){
   foodSupplyEl.textContent = ("Food Supply: " + foodSupply)
 }
-// if pet weight tracking is needed uncomment this out
-// function updatePetWeight(){
-//   petWeightEl.textContent = ("Pet Weight: " + petWeight)
-// }
 
 function updateAnimation(animationName){
   document.querySelector(".main-display").removeChild(document.querySelector("#animation"))
@@ -168,28 +158,20 @@ function submitName(){
   let li = document.createElement("li")
   let liContent = ("🎉🎊 You Named your Pet " + petName + "!")
   li.innerText = liContent
-  journalItemsEl.appendChild(li)
-  // setTimeout(() => {
-  //   alertsPanelEl.textContent = ""
-  // }, 5000)
+  journalItemsEl.appendChild(li) 
 
-  //* hunger timer  
   let hungerTimer = setInterval(() => {
-    console.log("hungerInterval: " + hungerInterval)
-      console.log("hungerTimeLeft: " + hungerTimeLeft)
     if(healthMeter === 10){
       clearInterval(hungerTimer)
       clearInterval(bladderTimer)
       clearInterval(sleepyTimer)
     }
-    // console.log("hungerTimeLeft " + hungerTimeLeft)
     hungerTimeLeft -= 1
     if(hungerInterval === 100){
       gameOver = true 
       updateAnimation(gameOverImage)
       gameOverSound.volume = .1
       gameOverSound.play()
-      // add game over sound
       alertsPanelEl.textContent = petName + " is Playing Dead - Please Reset"
       clearInterval(hungerTimer)
       clearInterval(bladderTimer)
@@ -198,8 +180,6 @@ function submitName(){
     if(hungerTimeLeft === -1){
       hungerTimeLeft = 5
       hungerInterval += 10
-      console.log("hungerInterval: " + hungerInterval)
-      console.log("healthMeter: " + healthMeter)
       hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
     }
     if(hungerInterval === 60 && hungerTimeLeft === 5){
@@ -216,16 +196,12 @@ function submitName(){
       updateAnimation(hungryAnimation)
     }
   }, 1000);
-
-
-  // bladder meter  
   let bladderTimer = setInterval(() => {
     if(healthMeter === 10){
       clearInterval(hungerTimer)
       clearInterval(bladderTimer)
       clearInterval(sleepyTimer)
     }
-    // console.log("bladderTimeLeft: " + bladderTimeLeft)
     bladderTimeLeft -= 1
     if(bladderInterval === 100){
       gameOver = true 
@@ -262,7 +238,6 @@ function submitName(){
       clearInterval(bladderTimer)
       clearInterval(sleepyTimer)
     }
-    // console.log("sleepyTimeLeft: " + sleepyTimeLeft)
     sleepyTimeLeft -= 1
     if(sleepyInterval === 100){
       gameOver = true 
@@ -281,7 +256,6 @@ function submitName(){
     }
     if(sleepyInterval === 60 && sleepyTimeLeft === 5){
       actionOccuring == true // probably need to add a timer to set this as false
-      console.log("Sleepy time left: " + sleepyTimeLeft)
       healthMeter--
       render()
       alertSound.volume = .3
@@ -318,7 +292,6 @@ function feedPet(){
       notificationUpSound.volume = .3
       notificationUpSound.play()
       alertsPanelEl.textContent = petName + " is Eating"
-      // journal experiment
       let li = document.createElement("li")
       let liContent = ("🍖🍗 " + petName + " ate!")
       li.innerText = liContent
@@ -334,18 +307,12 @@ function feedPet(){
         alertsPanelEl.textContent = petName + " is Done Eating"
         
       }, 5600)
-      // setTimeout(() => {
-      //   alertsPanelEl.textContent = ""
-      // }, 7600)
     } else {
-      // if time, put a sad dog animation
-      // add error sound
       alertsPanelEl.textContent = " not enough food"
     }
   }
 }
 
-// level up by having a sleepy meter to indicate when your pet needs sleep
 function takeNap(){  
   if(petName === undefined){
     alertsPanelEl.textContent = ("Pleae Enter a Name to Start")
@@ -379,9 +346,6 @@ function takeNap(){
       isNapping = false
       actionOccuring = false
     }, 6800)
-    // setTimeout(() => {
-    //   alertsPanelEl.textContent = ""
-    // }, 8800)
   }
 }
 
@@ -416,10 +380,6 @@ function playPet(){
       notificationDownSound.play()
       alertsPanelEl.textContent = (petName + " is Done Playing")
     }, 5000)
-    // setTimeout(() => {
-    //   alertsPanelEl.textContent = ""
-    // }, 7000)
-    // add play animation
   }
 }
 
@@ -455,9 +415,6 @@ function goPee(){
       isPeeing = false
       actionOccuring = false
     }, 2400)
-    // setTimeout(() => {
-    //   alertsPanelEl.textContent = ""
-    // }, 4400)
   }
 }
 

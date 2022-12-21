@@ -1,11 +1,19 @@
-/* Questions */
-/* How do i get the stats panel to show on the right of the main display?
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #fca400;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  /* max-width: 1200px; */
+}
 
-when on mobile, have the background of the main display remove and just be a color
+#app-wrapper {
+  max-width: 1000px;
+}
 
-*/
-
-/* this may not be the best way to do this but it works  */
 ul {
     -moz-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
@@ -20,22 +28,7 @@ ul > li {
     border-radius: 10px;
 }
 
-body {
-  font-family: 'Press Start 2P', cursive;
-  background-color: #fca400;
-  /* background-image: url(../assets/bush.png); */
-  /* background-size: 10%;
-  background-repeat: repeat; */
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-
 #header {
-  /* order: 1; */
   background-color: #ffbc42;
   padding: 10px;
   border-radius: 10px;
@@ -45,39 +38,25 @@ body {
 
 .main-display {
   background-color: white;
-  /* background-image: url(../assets/parkbackground.jpeg); */
   background-image: url(../assets/pixel-grass.png);
   background-repeat: no-repeat;
   background-size:cover;
-  /* min-width: 300px;
-  min-height: 300px; */
   border-radius: 20px;
   border: 5px solid black;
-  /* experiment */
   align-content: stretch;
 }
 
 .stats-panel {
   background-color: #ffbc42;
-  /* min-width: 50px; */
-  /* min-height: 210px; */
   align-self: flex-end;
   border-radius: 20px;
   border: 5px solid black;
   float: right;
-  /* margin-bottom: 10px; */
   font-size: xx-small;
   margin-right: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 10px;
-  /* align-content: center; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* justify-items: center; */
-  /* text-align: center; */
-
-
 }
 
 #name-panel {
@@ -87,8 +66,6 @@ body {
   padding: 5px;
   margin-bottom: 10px;
   background-color: #ffbc42;
-  /* max-width: 360px; */
-  /* align-self: center; */
 }
 
 #welcome-message-2 {
@@ -96,16 +73,9 @@ body {
 }
 
 #animation{
-  /* max-width: 180px; */
-  /* min-height: 100px; */
-  /* just added */
-  /* max-width: 300px; */
   align-self: center;
   flex-grow: 2;
-  /* border: 2px solid black; */
   margin-top: 50px;
-
-
 }
 
 #reset-btn{
@@ -115,22 +85,15 @@ body {
 }
 
 .button-panel {
-  /* order: 3; */
   background-color: #ffbc42;
-  /* max-width: 200px; */
-  /* min-width: 300px; */
-  /* i think i need to remove this but it causes problems */
-  /* float: right; */
   padding: 10px;
   border-radius: 10px;
   border: 5px solid black;
-  /* align-self: center; */
   margin-top: 10px;
 }
 
 .interaction-button {
   border: 2px solid black;
-  /* min-width: 10px; */
   margin: 1px;
   font-size: 10px;
   height: 40px;
@@ -155,7 +118,6 @@ body {
 
 #alerts-div {
   background-color: #ffbc42;
-  /* max-width: 100px; */
   min-width: 150px;
   min-height: 80px;
   max-width: 150px;
@@ -163,8 +125,6 @@ body {
   padding: 10px;
   border-radius: 10px;
   border: 5px solid black;
-  /* margin-top: 10px; */
-  /* vertical-align: middle; */
   font-size: xx-small;
   margin-left: 5px;
   margin-right: 5px;
@@ -178,12 +138,9 @@ body {
   margin-top: 10px;
   min-width: 300px;
   background-color: #ffbc42;
-  /* order: 4; */
   align-content: left;
   text-align: center;
   font-size: small;
-  /* max-height:250px;
-  overflow-y:scroll; */
   max-height: 200px;
   overflow-y: scroll;
 }
@@ -192,12 +149,12 @@ body {
   text-align: left;
 }
 
+
+
 li {
   padding: 5px;
 }
 
-
-/* Health Meter */
 .health-wrapper {
   width: 95%;
 }
@@ -210,7 +167,6 @@ li {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* im pretty sure that ill need to figure out how to center the health bar without margin-left when optimizing for mobile */
 }
 .health-progress-bar-fill {
   display: block;
@@ -221,7 +177,6 @@ li {
   transition: width 00ms ease-in-out;
 }
 
-/* Hunger Meter */
 .hunger-wrapper {
   width:95%;
 }
@@ -234,7 +189,6 @@ li {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* im pretty sure that ill need to figure out how to center the health bar without margin-left when optimizing for mobile */
 }
 .hunger-progress-bar-fill {
   display: block;
@@ -245,7 +199,6 @@ li {
   transition: width 00ms ease-in-out;
 }
 
-/* Bladder Meter  */
 .bladder-wrapper {
   width: 95%;
 }
@@ -258,7 +211,6 @@ li {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* im pretty sure that ill need to figure out how to center the health bar without margin-left when optimizing for mobile */
 }
 .bladder-progress-bar-fill {
   display: block;
@@ -269,7 +221,6 @@ li {
   transition: width 00ms ease-in-out;
 }
 
-/* Sleepy Meter */
 .sleepy-wrapper {
   width: 95%;
 }
@@ -282,7 +233,6 @@ li {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* im pretty sure that ill need to figure out how to center the health bar without margin-left when optimizing for mobile */
 }
 .sleepy-progress-bar-fill {
   display: block;

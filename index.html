@@ -9,89 +9,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
   <script defer src="./js/app.js"></script>
   <script defer src="./js/confetti.js"></script>
 </head>
 <body>
-  
-  <p id="header">Sharmagotchi</p>
+  <div id="app-wrapper">
+    <p id="header">Sharmagotchi</p>
 
-  <div id="name-panel">
-    <p id="welcome-message-1">Welcome to Your New Favorite Pet Simulator!</p>
-    <p id="welcome-message-2">
-        - Enter a name to adopt a new pet. <br> <br>
-        - Raise your pet's health meter to full by interacting with them. <br> <br>
-        - Play with your pet to increase their food supply. <br><br>
-        - Don't let your pet's hunger, bladder, or sleepy meter get too full or their health meter will go down. <br><br>
-        - REMEMBER: Pets need constant attention!
-    </p>
-    <p id="name">Name:</p>
-    <input type="text" id="name-input" placeholder="Enter Pet Name"></input>
-    <button class="interaction-button" id="submit-name">Play</button>
-  </div>
-
-  <div class="main-display">
-
-    <div id="alerts-div">
-      <p>ALERTS!</h1>
-        <div id="alerts-panel"></div>
+    <div id="name-panel">
+      <p id="welcome-message-1">Welcome to Your New Favorite Pet Simulator!</p>
+      <p id="welcome-message-2">
+          - Enter a name for your newly adopted Sharmagotchi. <br> <br>
+          - Raise your pet's health meter to full by interacting with them. <br> <br>
+          - Play with your pet to increase their food supply. <br><br>
+          - Don't let your pet's hunger, bladder, or sleepy meter get too full or their health meter will go down. <br><br>
+          - REMEMBER: Pets need constant attention!
+      </p>
+      <p id="name">Name:</p>
+      <input type="text" id="name-input" placeholder="Enter Pet Name"></input>
+      <button class="interaction-button" id="submit-name">Play</button>
     </div>
 
-    <div class="stats-panel">
-      <h3 id="stats-header">Stats</h3>
-      <!-- health meter elements -->
-      <p id="health-meter">Health Meter:</p>
-      <div class="health-wrapper">
-        <div class="health-progress-bar">
-          <span class="health-progress-bar-fill" style="width: 100%;"></span>
-        </div>
-      </div>
-      <!-- hunger meter elements -->
-      <p id="hunger-meter">Hunger Meter:</p>
-      <div class="hunger-wrapper">
-        <div class="hunger-progress-bar">
-          <span class="hunger-progress-bar-fill" style="width: 100%;"></span>
-        </div>
-      </div>
-      <!-- bladder meter elements -->
-      <p id="bladder-meter">Bladder Meter:</p>
-      <div class="bladder-wrapper">
-        <div class="bladder-progress-bar">
-          <span class="bladder-progress-bar-fill" style="width: 100%;"></span>
-        </div>
-      </div>
-      <!-- sleepy meter elements -->
-      <p id="sleepy-meter">Sleepy Meter:</p>
-      <div class="sleepy-wrapper">
-        <div class="sleepy-progress-bar">
-          <span class="sleepy-progress-bar-fill" style="width: 100%;"></span>
-        </div>
-      </div>
-      <!-- uncomment out if any age mechanics are added -->
-      <!-- <p id="age">Age: 0</p> -->
-      <p id="food-supply"></p>
-      <button id="reset-btn">Reset</button>
+    <div class="main-display">
 
-    </div>
-    
-    <!-- <div id="animation-panel"> -->
+      <div id="alerts-div">
+        <p>ALERTS!</h1>
+          <div id="alerts-panel"></div>
+      </div>
+
+      <div class="stats-panel">
+        <h3 id="stats-header">Stats</h3>
+        <!-- health meter elements -->
+        <p id="health-meter">Health Meter:</p>
+        <div class="health-wrapper">
+          <div class="health-progress-bar">
+            <span class="health-progress-bar-fill" style="width: 100%;"></span>
+          </div>
+        </div>
+        <!-- hunger meter elements -->
+        <p id="hunger-meter">Hunger Meter:</p>
+        <div class="hunger-wrapper">
+          <div class="hunger-progress-bar">
+            <span class="hunger-progress-bar-fill" style="width: 100%;"></span>
+          </div>
+        </div>
+        <!-- bladder meter elements -->
+        <p id="bladder-meter">Bladder Meter:</p>
+        <div class="bladder-wrapper">
+          <div class="bladder-progress-bar">
+            <span class="bladder-progress-bar-fill" style="width: 100%;"></span>
+          </div>
+        </div>
+        <!-- sleepy meter elements -->
+        <p id="sleepy-meter">Sleepy Meter:</p>
+        <div class="sleepy-wrapper">
+          <div class="sleepy-progress-bar">
+            <span class="sleepy-progress-bar-fill" style="width: 100%;"></span>
+          </div>
+        </div>
+        
+        <p id="food-supply"></p>
+        <button id="reset-btn">Reset</button>
+
+      </div>
+      
       <img src="./assets/left-facing.gif" id="animation" width="40%">    
-    <!-- </div> -->
-  
-  </div>
     
-  <div class="button-panel">
-    <button class="interaction-button" id="feed-btn">Feed</button>
-    <button class="interaction-button" id="play-btn">Play</button>
-    <button class="interaction-button" id="nap-btn">Nap</button>
-    <button class="interaction-button" id="pee-btn">Go#1</button>
+    </div>
+      
+    <div class="button-panel">
+      <button class="interaction-button" id="feed-btn">Feed</button>
+      <button class="interaction-button" id="play-btn">Play</button>
+      <button class="interaction-button" id="nap-btn">Nap</button>
+      <button class="interaction-button" id="pee-btn">Go#1</button>
+    </div>
+    
+    <div id="journal">
+      <h3>Journal</h3>
+      <ul id="journal-items">
+      </ul>
+    </div>
+    
   </div>
-  
-  <div id="journal">
-    <h3>Journal</h3>
-    <ul id="journal-items">
-    </ul>
-  </div>
-
 </body>
 </html>
