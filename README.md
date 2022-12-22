@@ -1,10 +1,10 @@
-## <center>Welcome to Sharmagotchi!</center>
 <p align="center">
+## <center>Welcome to Sharmagotchi!</center>
 <img width="30%" src="./assets/app-screenshot.png">
-</p>
 
 ## <center>Your new favorite pet simulator! <a href="https://sharmagotchi.netlify.app/">Link</a> to game.</center>
 <br>
+</p>
 
 <a href="https://clarkdoom.notion.site/544c77fb7fb04deb8fef22c70dc97162?v=d00b19eecb274b359cd87b4def2129b6">Link</a> to Planning Materials <br>
 
