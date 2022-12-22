@@ -57,6 +57,7 @@ ul > li {
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 10px;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
 }
 
 #name-panel {
@@ -66,6 +67,15 @@ ul > li {
   padding: 5px;
   margin-bottom: 10px;
   background-color: #ffbc42;
+}
+
+#name-input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
+  font-family: 'Press Start 2P', cursive;
 }
 
 #welcome-message-2 {
@@ -82,6 +92,7 @@ ul > li {
   font-family: 'Press Start 2P', cursive;
   border: 2px solid black;
   font-size: xx-small;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
 }
 
 .button-panel {
@@ -102,18 +113,23 @@ ul > li {
 
 #submit-name {
   font-family: 'Press Start 2P', cursive;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331)
 }
 #feed-btn {
   font-family: 'Press Start 2P', cursive;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331)
 }
 #play-btn {
   font-family: 'Press Start 2P', cursive;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331)
 }
 #nap-btn {
   font-family: 'Press Start 2P', cursive;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331)
 }
 #pee-btn {
   font-family: 'Press Start 2P', cursive;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331)
 }
 
 #alerts-div {
@@ -130,6 +146,7 @@ ul > li {
   margin-right: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
+  box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
 }
 
 #journal {
@@ -320,4 +337,13 @@ li {
     margin-right: 5px;
     font-size: xx-small;
   }
+
+  .interaction-button {
+    border: 2px solid black;
+    margin: 1px;
+    font-size: 10px;
+    height: 40px;
+    width: 60px;
+  }
+
 } 
