@@ -27,7 +27,7 @@ This is an app brought to you by my two charming but very needy Shar Pei. Owning
 * True to life mechanics such as eating, sleeping, going # 1, and playing.
 * Game alerts that catch your attention.
 * Pet Care Journal to display a history of your interactions.
-* Responsive design that works on mobile and desktop (see pics above)
+* Responsive design that works on mobile and desktop (see pics above).
 
 ## Technology used
 <p display="inline">
@@ -37,9 +37,9 @@ This is an app brought to you by my two charming but very needy Shar Pei. Owning
 
 ## Future Enhancements 
 
-- Multi-tier health bar that increases as your pet's age increases
-- Additional pet options with accompanying animations
-- Dark Mode
+- Multi-tier health bar that increases as your pet's age increases.
+- Additional pet options with accompanying animations.
+- Dark Mode.
 
 ## Atributions: 
 * All animations were created by myself using <a href="https://www.pixilart.com/">pixilart</a>. 
