@@ -309,7 +309,7 @@ a {
   }
 
   #alerts-div {
-    width:400px;
+    max-width:400px;
     font-size: medium;
     margin-left: 20px;
     margin-top: 20px;
