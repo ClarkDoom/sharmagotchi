@@ -375,8 +375,8 @@ a {
 
 } 
 
-/* @media only screen and (max-width: 905px) {
+@media only screen and (max-width: 905px) {
   .main-display {
     height: 352px;
   }
-} */
+}
