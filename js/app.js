@@ -126,12 +126,12 @@ function updateFoodSupply(){
 }
 
 function updateAnimation(animationName){
-  document.querySelector(".main-display").removeChild(document.querySelector("#animation"))
+  document.querySelector("#animation-panel").removeChild(document.querySelector("#animation"))
   let updatedAnimation = document.createElement("img")
   updatedAnimation.setAttribute("src", animationName)
   updatedAnimation.setAttribute('width', "40%")
   updatedAnimation.setAttribute("id","animation")
-  mainDisplayEl.appendChild(updatedAnimation)
+  document.querySelector("#animation-panel").appendChild(updatedAnimation)
 }
 
 function reset(){

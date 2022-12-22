@@ -7,7 +7,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  /* max-width: 1200px; */
 }
 
 #app-wrapper {
@@ -75,8 +74,8 @@ ul > li {
 
 #animation{
   align-self: center;
-  flex-grow: 2;
-  margin-top: 50px;
+  /* flex-grow: 2; */
+  margin-top: -20px;
 }
 
 #reset-btn{
@@ -121,7 +120,7 @@ ul > li {
   background-color: #ffbc42;
   min-width: 150px;
   min-height: 80px;
-  max-width: 150px;
+  /* max-width: 150px; */
   float: left;
   padding: 10px;
   border-radius: 10px;
@@ -245,10 +244,80 @@ li {
 }
 
 /* 768px is a common "breakpoint" width for tablets */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
     
-  .alerts-panel {
-    color: white;
+  #animation-panel {
+    width: 1000px;
   }
 
+  .main-display {
+    height: 446px;
+  }
+
+  #alerts-div {
+    width:400px;
+    font-size: medium;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .stats-panel {
+    width: 200px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: small;
+  }
+
+} 
+/* @media only screen and (max-width: 768px) {
+    
+  #animation-panel {
+    width: 600px;
+  }
+
+  .main-display {
+    height: 380px;
+  }
+
+  #alerts-div {
+    width:250px;
+    font-size: small;
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+
+  .stats-panel {
+    width: 200px;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: x-small;
+  }
+}  */
+@media only screen and (max-width: 390px) {
+    
+  #app-wrapper {
+    max-width: 350px;
+  }
+
+  #animation-panel {
+    width: 450px;
+  }
+
+  .main-display {
+    height: 370px;
+  }
+
+  #alerts-div {
+    width:60px;
+    font-size: xx-small;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  .stats-panel {
+    width: 100px;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: xx-small;
+  }
 } 
