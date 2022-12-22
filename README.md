@@ -1,5 +1,7 @@
 ## <center>Welcome to Sharmagotchi!</center>
-<img style="display: block; margin: 0 auto" width="30%" src="https://i.imgur.com/9t2dCUVl.png">
+<p align="center">
+<img width="50%" src="./assets/app-screenshot.png">
+</p>
 
 ## <center>Your new favorite pet simulator! <a href="https://sharmagotchi.netlify.app/">Link</a> to game.</center>
 <br>
@@ -12,10 +14,6 @@ This is an app brought to you by my two charming but very needy Shar Pei. Owning
 
 
 ## <center>Getting Started </center>
-
-<p align="center">
-<img src="./assets/app-screenshot.png">
-</p>
 
 ## Goal of the Game: Raise your own digital pet and ensure they are happy and healthy. 
   
