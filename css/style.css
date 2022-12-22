@@ -1,6 +1,7 @@
 body {
   font-family: 'Press Start 2P', cursive;
   background-color: #fca400;
+  background-image: url("../assets/yellow-clay-background.jpg");
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -333,7 +334,7 @@ a {
     margin-right: 20px;
     font-size: small;
   }
-  
+
 } 
 
 @media only screen and (max-width: 430px) {
@@ -373,3 +374,9 @@ a {
   }
 
 } 
+
+@media only screen and (max-width: 905px) {
+  .main-display {
+    height: 352px;
+  }
+}

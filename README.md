@@ -46,3 +46,4 @@ This is an app inspired by my two charming but very needy Shar Pei. Owning a pet
 ## Atributions: 
 * All animations were created by myself using <a href="https://www.pixilart.com/">pixilart</a>. 
 * Sounds provided by <a href="https://pixabay.com/">Pixabay</a> under an open license that allows for free personal or commercial use. 
+* <a href="https://www.freepik.com/free-vector/abstract-yellow-geometric-gradient-pattern-background_25694288.htm#query=mustard%20yellow%20background&position=31&from_view=keyword">Image by vector_corp</a> on Freepik
