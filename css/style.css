@@ -337,7 +337,7 @@ a {
 
 } 
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 428px) {
     
   #app-wrapper {
     max-width: 400px;
@@ -348,7 +348,7 @@ a {
   }
 
   .main-display {
-    height: 430px;
+    height: 400px;
   }
 
   #alerts-div {
@@ -375,8 +375,8 @@ a {
 
 } 
 
-@media only screen and (max-width: 905px) {
+/* @media only screen and (max-width: 905px) {
   .main-display {
     height: 352px;
   }
-}
+} */
