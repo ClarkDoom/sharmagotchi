@@ -1,5 +1,5 @@
 ## <center>Welcome to Sharmagotchi!</center>
-<img style="display: block; margin: 0 auto" width="30%" src="https://farm66.staticflickr.com/65535/52578651521_dac6bcf3dd_m.jpg">
+<img style="display: block; margin: 0 auto" width="30%" src="https://i.imgur.com/9t2dCUVl.png">
 
 ## <center>Your new favorite pet simulator! <a href="https://sharmagotchi.netlify.app/">Link</a> to game.</center>
 <br>
