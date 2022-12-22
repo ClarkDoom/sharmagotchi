@@ -108,7 +108,7 @@ function updateHealthMeter(){
   if(healthMeter >= 10){
     successSound.volume = .3
     successSound.play()
-    alertsPanelEl.textContent = (petName + " has Been Successfully Cared For")
+    alertsPanelEl.textContent = (petName + " Has Been Successfully Cared For")
     confetti.start(3000)
     healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
     updateAnimation(happyAnimation)
@@ -156,9 +156,9 @@ function submitName(){
   setTimeout(() => {
     updateAnimation(leftFacingAnimation)
   }, 3000)
-  alertsPanelEl.textContent = ("Have Fun and Good Luck!")
+  alertsPanelEl.textContent = ("Have Fun And Good Luck!")
   let li = document.createElement("li")
-  let liContent = ("🎉🎊 You Named your Pet " + petName + "!")
+  let liContent = ("🎉🎊 You Named Your Pet " + petName + "!")
   li.innerText = liContent
   journalItemsEl.appendChild(li) 
 
@@ -174,7 +174,7 @@ function submitName(){
       updateAnimation(gameOverImage)
       gameOverSound.volume = .1
       gameOverSound.play()
-      alertsPanelEl.textContent = petName + " is Playing Dead - Please Reset"
+      alertsPanelEl.textContent = petName + " Is Playing Dead - Please Reset"
       clearInterval(hungerTimer)
       clearInterval(bladderTimer)
       clearInterval(sleepyTimer)
@@ -190,7 +190,7 @@ function submitName(){
       render()
       alertSound.volume = .3
       alertSound.play()
-      alertsPanelEl.textContent = petName + " is Hungry - Feed Soon"
+      alertsPanelEl.textContent = petName + " Is Hungry - Feed Soon"
       let li = document.createElement("li")
       let liContent = "⚠️⚠️ HUNGER ALERT: Feed Soon! ⚠️⚠️"
       li.innerText = liContent
@@ -210,7 +210,7 @@ function submitName(){
       gameOverSound.volume = .3
       gameOverSound.play()
       updateAnimation(peeAnimation)
-      alertsPanelEl.textContent = petName + " Had an Accident - Please Reset"
+      alertsPanelEl.textContent = petName + " Had An Accident - Please Reset"
       clearInterval(hungerTimer)
       clearInterval(bladderTimer)
       clearInterval(sleepyTimer)
@@ -226,7 +226,7 @@ function submitName(){
       actionOccuring == true // probably need to add a timer to set this as false
       alertSound.volume = .3
       alertSound.play()
-      alertsPanelEl.textContent = petName + " needs to go #1"
+      alertsPanelEl.textContent = petName + " Needs To Go #1"
       let li = document.createElement("li")
       let liContent = ("⚠️⚠️ BATHROOM ALERT: Go #1 Soon! ⚠️⚠️")
       li.innerText = liContent
@@ -246,7 +246,7 @@ function submitName(){
       gameOverSound.volume = .3
       gameOverSound.play()
       updateAnimation(sadPeiAnimation)
-      alertsPanelEl.textContent = petName + " is Too Sleepy - Please Reset"
+      alertsPanelEl.textContent = petName + " Is Too Sleepy - Please Reset"
       clearInterval(hungerTimer)
       clearInterval(bladderTimer)
       clearInterval(sleepyTimer)
@@ -262,9 +262,9 @@ function submitName(){
       render()
       alertSound.volume = .3
       alertSound.play()
-      alertsPanelEl.textContent = petName + " is Getting Sleepy - Nap Soon"
+      alertsPanelEl.textContent = petName + " Is Getting Sleepy - Nap Soon"
       let li = document.createElement("li")
-      let liContent = ("⚠️⚠️ SLEEPY ALERT: Take a Nap Soon! ⚠️⚠️")
+      let liContent = ("⚠️⚠️ SLEEPY ALERT: Take A Nap Soon! ⚠️⚠️")
       li.innerText = liContent
       journalItemsEl.appendChild(li)
       updateAnimation(gettingSleepingAnimation)
@@ -274,10 +274,10 @@ function submitName(){
 
 function feedPet(){
   if(petName === undefined){
-    alertsPanelEl.textContent = ("Pleae Enter a Name to Start")
+    alertsPanelEl.textContent = ("Pleae Enter A Name to Start")
   } else 
   if(isEating === true){
-    alertsPanelEl.textContent = (petName + " is Already Eating")
+    alertsPanelEl.textContent = (petName + " Is Already Eating")
   } else if(gameOver === true){
     alertsPanelEl.textContent = ("Game Over: Please Reset")
   } else if(actionOccuring === true){
@@ -293,9 +293,9 @@ function feedPet(){
       isEating = true
       notificationUpSound.volume = .3
       notificationUpSound.play()
-      alertsPanelEl.textContent = petName + " is Eating"
+      alertsPanelEl.textContent = petName + " Is Eating"
       let li = document.createElement("li")
-      let liContent = ("🍖🍗 " + petName + " ate!")
+      let liContent = ("🍖🍗 " + petName + " Ate!")
       li.innerText = liContent
       journalItemsEl.appendChild(li)
       updateAnimation(eatingAnimation)
@@ -306,20 +306,20 @@ function feedPet(){
         updateAnimation(leftFacingAnimation)
         isEating = false
         actionOccuring = false
-        alertsPanelEl.textContent = petName + " is Done Eating"
+        alertsPanelEl.textContent = petName + " Is Done Eating"
         
       }, 5600)
     } else {
-      alertsPanelEl.textContent = " not enough food"
+      alertsPanelEl.textContent = " Not Enough Food"
     }
   }
 }
 
 function takeNap(){  
   if(petName === undefined){
-    alertsPanelEl.textContent = ("Pleae Enter a Name to Start")
+    alertsPanelEl.textContent = ("Pleae Enter A Name To Start")
   } else if(isNapping === true){
-    alertsPanelEl.textContent = (petName + " is Already Napping")
+    alertsPanelEl.textContent = (petName + " Is Already Napping")
   } else if(gameOver === true){
     alertsPanelEl.textContent = ("Game Over: Please Reset")
   } else if(actionOccuring === true){
@@ -335,16 +335,16 @@ function takeNap(){
     updateAnimation(sleepingAnimation)
     notificationUpSound.volume = .3
     notificationUpSound.play()
-    alertsPanelEl.textContent = (petName + " is Napping")
+    alertsPanelEl.textContent = (petName + " Is Napping")
     let li = document.createElement("li")
-    let liContent = ("💤😴 " + petName + " Took a Nap!")
+    let liContent = ("💤😴 " + petName + " Took A Nap!")
     li.innerText = liContent
     journalItemsEl.appendChild(li)
     setTimeout(() => {
       updateAnimation(leftFacingAnimation)
       notificationDownSound.volume = .3
       notificationDownSound.play()
-      alertsPanelEl.textContent = (petName +" is Done Napping")
+      alertsPanelEl.textContent = (petName +" Is Done Napping")
       isNapping = false
       actionOccuring = false
     }, 6800)
@@ -353,7 +353,7 @@ function takeNap(){
 
 function playPet(){
   if(petName === undefined){
-    alertsPanelEl.textContent = ("Pleae Enter a Name to Start")
+    alertsPanelEl.textContent = ("Pleae Enter A Name to Start")
   } else if(isPlaying === true){
     alertsPanelEl.textContent = (petName + " is Already Playing")
   }else if(gameOver === true){
@@ -368,7 +368,7 @@ function playPet(){
     updateAnimation(playingAnimation)
     notificationUpSound.volume = .3
     notificationUpSound.play()
-    alertsPanelEl.textContent = (petName + " is Playing")
+    alertsPanelEl.textContent = (petName + " Is Playing")
     let li = document.createElement("li")
     let liContent = ("🐾🛝 " + petName + " Played!")
     li.innerText = liContent
@@ -380,16 +380,16 @@ function playPet(){
       updateAnimation(leftFacingAnimation)
       notificationDownSound.volume = .3
       notificationDownSound.play()
-      alertsPanelEl.textContent = (petName + " is Done Playing")
+      alertsPanelEl.textContent = (petName + " Is Done Playing")
     }, 5000)
   }
 }
 
 function goPee(){
   if(petName === undefined){
-    alertsPanelEl.textContent = ("Pleae Enter a Name to Start")
+    alertsPanelEl.textContent = ("Pleae Enter A Name to Start")
   } else if(isPeeing === true){
-    alertsPanelEl.textContent = (petName + " is Already Peeing")
+    alertsPanelEl.textContent = (petName + " Is Already Peeing")
   } else if(gameOver === true){
     alertsPanelEl.textContent = ("Game Over: Please Reset")
   } else if(actionOccuring === true){
@@ -402,9 +402,9 @@ function goPee(){
     isPeeing = true
     notificationUpSound.volume = .3
     notificationUpSound.play()
-    alertsPanelEl.textContent = (petName + " is Going #1")
+    alertsPanelEl.textContent = (petName + " Is Going #1")
     let li = document.createElement("li")
-    let liContent = ("🚽🧻 " + petName + " Went to the Bathroom!")
+    let liContent = ("🚽🧻 " + petName + " Went To The Bathroom!")
     li.innerText = liContent
     journalItemsEl.appendChild(li)
     render()
@@ -412,7 +412,7 @@ function goPee(){
     setTimeout(() => {
       notificationDownSound.volume = .3
       notificationDownSound.play()
-      alertsPanelEl.textContent = (petName + " is Done Going #1")
+      alertsPanelEl.textContent = (petName + " Is Done Going #1")
       updateAnimation(leftFacingAnimation)
       isPeeing = false
       actionOccuring = false

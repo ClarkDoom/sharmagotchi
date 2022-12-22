@@ -98,7 +98,7 @@ ul > li {
 #animation{
   align-self: center;
   /* flex-grow: 2; */
-  margin-top: -20px;
+  /* margin-top: -20px; */
 }
 
 #reset-btn{
