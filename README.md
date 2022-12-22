@@ -1,4 +1,5 @@
 <p align="center">
+
 ## <center>Welcome to Sharmagotchi!</center>
 <img width="30%" src="./assets/app-screenshot.png">
 
