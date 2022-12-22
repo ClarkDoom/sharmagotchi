@@ -12,6 +12,9 @@ body {
 .blink_me {
   animation: blinker 1s linear infinite;
 }
+.blink_me_li {
+  animation: blinker 1s linear 3;
+}
 
 @keyframes blinker {  
   50% { opacity: 0; }

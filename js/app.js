@@ -140,8 +140,10 @@ function reset(){
   return false;
 }
 
-function submitName(){
-  
+function submitName(){ 
+  if(nameInput.value === ""){
+    alertsPanelEl.textContent = ("Please Enter A Name To Begin!")
+  } else {
   nameSubmitSound.volume = .30
   nameSubmitSound.play()
   petName = nameInput.value
@@ -194,6 +196,7 @@ function submitName(){
       let li = document.createElement("li")
       let liContent = "⚠️⚠️ HUNGER ALERT: Feed Soon! ⚠️⚠️"
       li.innerText = liContent
+      li.setAttribute("class", "blink_me_li")
       journalItemsEl.appendChild(li)
       updateAnimation(hungryAnimation)
     }
@@ -230,6 +233,7 @@ function submitName(){
       let li = document.createElement("li")
       let liContent = ("⚠️⚠️ BATHROOM ALERT: Go #1 Soon! ⚠️⚠️")
       li.innerText = liContent
+      li.setAttribute("class", "blink_me_li")
       journalItemsEl.appendChild(li)
     }
   }, 1000);
@@ -266,10 +270,12 @@ function submitName(){
       let li = document.createElement("li")
       let liContent = ("⚠️⚠️ SLEEPY ALERT: Take A Nap Soon! ⚠️⚠️")
       li.innerText = liContent
+      li.setAttribute("class", "blink_me_li")
       journalItemsEl.appendChild(li)
       updateAnimation(gettingSleepingAnimation)
     }
   }, 1000);
+}
 }
 
 function feedPet(){
