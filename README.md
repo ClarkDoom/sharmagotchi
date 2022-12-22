@@ -7,7 +7,7 @@
 <br>
 </p>
 
-<a href="https://clarkdoom.notion.site/544c77fb7fb04deb8fef22c70dc97162?v=d00b19eecb274b359cd87b4def2129b6">Link</a> to Planning Materials <br>
+<a href="https://clarkdoom.notion.site/544c77fb7fb04deb8fef22c70dc97162?v=d00b19eecb274b359cd87b4def2129b6">Link</a> to Planning Materials
 
 <img align="left"  style="display: inline; margin: 0 10px" src="https://farm66.staticflickr.com/65535/52578155402_e73c73c696_m.jpg">
 
