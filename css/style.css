@@ -330,7 +330,7 @@ a {
 @media only screen and (max-width: 430px) {
     
   #app-wrapper {
-    max-width: 350px;
+    max-width: 400px;
   }
 
   #animation-panel {
