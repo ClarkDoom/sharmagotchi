@@ -14,8 +14,7 @@ This is an app brought to you by my two charming but very needy Shar Pei. Owning
 ## <center>Getting Started </center>
 
 <p align="center">
-<center>Mobile</center><img src="./assets/app-screenshot.png">
-<center>Desktop</center><img src="https://farm66.staticflickr.com/65535/52578902589_5cbcb66eba_m.jpg"><br>
+<img src="./assets/app-screenshot.png">
 </p>
 
 ## Goal of the Game: Raise your own digital pet and ensure they are happy and healthy. 
