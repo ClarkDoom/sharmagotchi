@@ -281,11 +281,11 @@ li {
   }
 
   .main-display {
-    height: 446px;
+    height: 500px;
   }
 
   #alerts-div {
-    width:400px;
+    max-width:400px;
     font-size: medium;
     margin-left: 20px;
     margin-top: 20px;
@@ -323,7 +323,7 @@ li {
     font-size: x-small;
   }
 }  */
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 415px) {
     
   #app-wrapper {
     max-width: 350px;
