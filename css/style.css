@@ -107,6 +107,7 @@ ul > li {
   font-size: xx-small;
   box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
   color: black;
+  padding: 10px
 }
 
 .button-panel {
@@ -168,6 +169,10 @@ ul > li {
   box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
 }
 
+#alerts-panel {
+  animation: blinker 1s linear infinite
+}
+
 #journal {
   border: 5px solid black;
   border-radius: 10px;
@@ -185,8 +190,6 @@ ul > li {
   text-align: left;
 }
 
-
-
 li {
   padding: 5px;
 }
@@ -196,7 +199,7 @@ li {
 }
 .health-progress-bar {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: white;
   padding: 3px;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
@@ -218,7 +221,7 @@ li {
 }
 .hunger-progress-bar {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: white;
   padding: 3px;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
@@ -240,7 +243,7 @@ li {
 }
 .bladder-progress-bar {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: white;
   padding: 3px;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
@@ -262,7 +265,7 @@ li {
 }
 .sleepy-progress-bar {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: white;
   padding: 3px;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
@@ -281,6 +284,14 @@ li {
 
 a {
   color: black;
+}
+
+#food-supply {
+  font-weight: bold;
+  border: 2px solid black;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 /* 768px is a common "breakpoint" width for tablets */
@@ -312,30 +323,7 @@ a {
     font-size: small;
   }
 } 
-/* @media only screen and (max-width: 768px) {
-    
-  #animation-panel {
-    width: 600px;
-  }
 
-  .main-display {
-    height: 380px;
-  }
-
-  #alerts-div {
-    width:250px;
-    font-size: small;
-    margin-left: 15px;
-    margin-top: 15px;
-  }
-
-  .stats-panel {
-    width: 200px;
-    margin-top: 15px;
-    margin-right: 15px;
-    font-size: x-small;
-  }
-}  */
 @media only screen and (max-width: 415px) {
     
   #app-wrapper {
@@ -347,7 +335,7 @@ a {
   }
 
   .main-display {
-    height: 370px;
+    height: 400px;
   }
 
   #alerts-div {

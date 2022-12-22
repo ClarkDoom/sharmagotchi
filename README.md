@@ -19,14 +19,15 @@ This is an app inspired by my two charming but very needy Shar Pei. Owning a pet
 
 ## Goal of the Game: Raise your own digital pet and ensure they are happy and healthy. 
   
-  - Enter a name for your newly adopted Sharmagotchi.
+  - Enter a name for your newly adopted Sharmagotchi to begin the game.
   - Raise your pet's health meter to full by interacting with them.
   - Play with your pet to increase their food supply.
   - Don't let your pet's hunger, bladder, or sleepy meter get too full or their health meter will go down.
+  - If your health meter reaches 0, your pet will play dead, pass out from exhaustion, or be too sad to continue being your pet and you must reset the game.
 
 ## Features: 
 * True to life mechanics such as eating, sleeping, going # 1, and playing.
-* Real-time game alerts.
+* Game alerts that catch your attention.
 * Pet Care Journal to display a history of your interactions.
 * responsive design that works on mobile and desktop (see pics above)
 
