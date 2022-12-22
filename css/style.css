@@ -12,6 +12,7 @@ body {
 .blink_me {
   animation: blinker 1s linear infinite;
 }
+
 .blink_me_li {
   animation: blinker 1s linear 3;
 }
@@ -29,6 +30,7 @@ ul {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
+
 ul > li {
     -moz-transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
@@ -100,8 +102,6 @@ ul > li {
 
 #animation{
   align-self: center;
-  /* flex-grow: 2; */
-  /* margin-top: -20px; */
 }
 
 #reset-btn{
@@ -134,21 +134,25 @@ ul > li {
   box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
   color: black;
 }
+
 #feed-btn {
   font-family: 'Press Start 2P', cursive;
   box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
   color: black;
 }
+
 #play-btn {
   font-family: 'Press Start 2P', cursive;
   box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
   color: black;
 }
+
 #nap-btn {
   font-family: 'Press Start 2P', cursive;
   box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
   color: black;
 }
+
 #pee-btn {
   font-family: 'Press Start 2P', cursive;
   box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.331);
@@ -159,7 +163,6 @@ ul > li {
   background-color: #ffbc42;
   min-width: 150px;
   min-height: 80px;
-  /* max-width: 150px; */
   float: left;
   padding: 10px;
   border-radius: 10px;
@@ -200,6 +203,7 @@ li {
 .health-wrapper {
   width: 95%;
 }
+
 .health-progress-bar {
   width: 100%;
   background-color: white;
@@ -210,6 +214,7 @@ li {
   align-items: center;
   text-align: center;
 }
+
 .health-progress-bar-fill {
   display: block;
   height: 22px;
@@ -222,6 +227,7 @@ li {
 .hunger-wrapper {
   width:95%;
 }
+
 .hunger-progress-bar {
   width: 100%;
   background-color: white;
@@ -232,6 +238,7 @@ li {
   align-items: center;
   text-align: center;
 }
+
 .hunger-progress-bar-fill {
   display: block;
   height: 22px;
@@ -244,6 +251,7 @@ li {
 .bladder-wrapper {
   width: 95%;
 }
+
 .bladder-progress-bar {
   width: 100%;
   background-color: white;
@@ -254,18 +262,19 @@ li {
   align-items: center;
   text-align: center;
 }
+
 .bladder-progress-bar-fill {
   display: block;
   height: 22px;
   background-color: #e69500;
   border-radius: 3px;
-  
   transition: width 00ms ease-in-out;
 }
 
 .sleepy-wrapper {
   width: 95%;
 }
+
 .sleepy-progress-bar {
   width: 100%;
   background-color: white;
@@ -276,12 +285,12 @@ li {
   align-items: center;
   text-align: center;
 }
+
 .sleepy-progress-bar-fill {
   display: block;
   height: 22px;
   background-color: #0496ff;
   border-radius: 3px;
-  
   transition: width 00ms ease-in-out;
 }
 
@@ -297,7 +306,6 @@ a {
   background-color: white;
 }
 
-/* 768px is a common "breakpoint" width for tablets */
 @media only screen and (min-width: 1024px) {
     
   #animation-panel {
@@ -325,6 +333,7 @@ a {
     margin-right: 20px;
     font-size: small;
   }
+  
 } 
 
 @media only screen and (max-width: 430px) {
