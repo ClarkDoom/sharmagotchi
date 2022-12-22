@@ -29,13 +29,15 @@ This is an app brought to you by my two charming but very needy Shar Pei. Owning
 * True to life mechanics such as eating, sleeping, going # 1, and playing.
 * Game alerts that catch your attention.
 * Pet Care Journal to display a history of your interactions.
-* responsive design that works on mobile and desktop (see pics above)
+* Responsive design that works on mobile and desktop (see pics above)
 
 ## Technology used
 
-* Javascript
-* html
-* CSS
+* [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)
+
+* [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
+* [![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com)
+
 
 ## Future Enhancements 
 
