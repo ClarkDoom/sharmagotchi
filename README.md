@@ -6,7 +6,7 @@
 
 
 <img align="left" width="30%" style="display: inline; margin: 0 10px" src="https://farm66.staticflickr.com/65535/52578155402_e73c73c696_m.jpg">
-This is an app inspired by my two charming but very needy Shar Pei. Owning a pet is hard work but its also fun and rewarding, which inspired me to model what it sometimes feels like with my app. Its a constant fight against the clock to make sure they're fed, well rested, taken out, and have got enough play time.<br><br><br><br><br><br><br><br>
+This is an app inspired by my two charming but very needy Shar Pei. Owning a pet is hard work but its also fun and rewarding, which inspired me to model what it sometimes feels like with my app. Its a constant fight against the clock to make sure they're fed, well rested, taken out, and have got enough play time.<br><br><br>
 
 
 ## <center>Getting Started </center>
