@@ -37,8 +37,8 @@ This is an app brought to you by my two charming but very needy Shar Pei. Owning
 
 ## Future Enhancements 
 
-- Multi-tier health bar that increases as your pet's age increases.
-- Additional pet options with accompanying animations.
+- Multi-tier health bar system that will simulate your pet aging over time.
+- Difficulty settings (shorter time before hungry/bladdy/sleepy meter fills as difficulty increases).
 - Dark Mode.
 
 ## Atributions: 
