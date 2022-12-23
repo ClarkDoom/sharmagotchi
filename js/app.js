@@ -361,7 +361,7 @@ function playPet(){
   } else {
     actionOccuring = true
     healthMeter++
-    foodSupply++
+    foodSupply = foodSupply + 1
     isPlaying = true
     updateAnimation(playingAnimation)
     notificationUpSound.volume = .3
