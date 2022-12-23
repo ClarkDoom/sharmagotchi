@@ -13,8 +13,6 @@ This is an app brought to you by my two charming but very needy Shar Pei. Owning
 
 <br>
 
-## <center>Getting Started </center>
-
 ## Goal of the Game: Raise your own digital pet and ensure they are happy and healthy. 
   
   - Enter a name for your newly adopted Sharmagotchi to begin the game.
