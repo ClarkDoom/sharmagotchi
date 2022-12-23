@@ -25,7 +25,7 @@ This is an app brought to you by my two charming but very needy Shar Pei. Owning
 * True to life mechanics such as eating, sleeping, going # 1, and playing.
 * Game alerts that catch your attention.
 * Pet Care Journal to display a history of your interactions.
-* Responsive design that works on mobile and desktop (see pics above).
+* Responsive design that works on mobile and desktop.
 
 ## Technology used
 <p display="inline">
