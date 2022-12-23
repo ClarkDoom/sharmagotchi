@@ -113,10 +113,7 @@ ul > li {
   padding: 10px
 }
 
-#reset-btn:focus {
-  background-color: #fca400;
-  color: white;
-}
+
 
 .button-panel {
   background-color: #ffbc42;
@@ -146,10 +143,7 @@ ul > li {
   color: black;
 }
 
-#feed-btn:focus {
-  background-color: #fca400;
-  color: white;
-}
+
 
 #play-btn {
   font-family: 'Press Start 2P', cursive;
@@ -157,10 +151,7 @@ ul > li {
   color: black;
 }
 
-#play-btn:focus{
-  background-color: #fca400;
-  color: white;
-}
+
 
 #nap-btn {
   font-family: 'Press Start 2P', cursive;
@@ -168,10 +159,7 @@ ul > li {
   color: black;
 }
 
-#nap-btn:focus {
-  background-color: #fca400;
-  color: white;
-}
+
 
 #pee-btn {
   font-family: 'Press Start 2P', cursive;
