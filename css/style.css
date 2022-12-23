@@ -113,6 +113,11 @@ ul > li {
   padding: 10px
 }
 
+#reset-btn:focus {
+  background-color: #fca400;
+  color: white;
+}
+
 .button-panel {
   background-color: #ffbc42;
   padding: 10px;
