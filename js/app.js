@@ -104,11 +104,15 @@ function updateHealthMeter(){
   if(healthMeter >= 10){
     successSound.volume = .3
     successSound.play()
-    alertsPanelEl.textContent = (petName + " Has Been Successfully Cared For")
+    alertsPanelEl.textContent = (petName + " Has Been Successfully Cared For!")
     confetti.start(3000)
     healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
     updateAnimation(happyAnimation)
     gameOver = true
+    clearInterval(feedPetTimeout)
+    clearInterval(playPetTimeout)
+    clearInterval(takeNapTimeout)
+    clearInterval(goPeeTimeout)
   } else {
     healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
   }
@@ -299,7 +303,7 @@ function feedPet(){
         journalItemsEl.appendChild(li)
         updateAnimation(eatingAnimation)
         render()
-        setTimeout(() => {
+        let feedPetTimeout = setTimeout(() => {
           notificationDownSound.volume = .3
           notificationDownSound.play()
           updateAnimation(leftFacingAnimation)
@@ -338,7 +342,7 @@ function takeNap(){
     let liContent = ("💤😴 " + petName + " Took A Nap!")
     li.innerText = liContent
     journalItemsEl.appendChild(li)
-    setTimeout(() => {
+    let takeNapTimeout = setTimeout(() => {
       updateAnimation(leftFacingAnimation)
       notificationDownSound.volume = .3
       notificationDownSound.play()
@@ -362,6 +366,7 @@ function playPet(){
     actionOccuring = true
     healthMeter++
     foodSupply = foodSupply + 1
+    console.log(foodSupply)
     isPlaying = true
     updateAnimation(playingAnimation)
     notificationUpSound.volume = .3
@@ -372,7 +377,7 @@ function playPet(){
     li.innerText = liContent
     journalItemsEl.appendChild(li)
     render()
-    setTimeout(() => {
+    let playPetTimeout = setTimeout(() => {
       isPlaying = false
       actionOccuring = false
       updateAnimation(leftFacingAnimation)
@@ -407,7 +412,7 @@ function goPee(){
     journalItemsEl.appendChild(li)
     render()
     updateAnimation(peeAnimation)
-    setTimeout(() => {
+    let goPeeTimeout = setTimeout(() => {
       notificationDownSound.volume = .3
       notificationDownSound.play()
       alertsPanelEl.textContent = (petName + " Is Done Going #1")
