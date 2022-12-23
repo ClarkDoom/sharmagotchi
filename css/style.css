@@ -337,7 +337,7 @@ a {
 
 } 
 
-@media only screen and (max-width: 428px) {
+@media only screen and (max-width: 427px) {
     
   #app-wrapper {
     max-width: 400px;
