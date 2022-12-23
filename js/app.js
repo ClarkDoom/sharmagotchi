@@ -70,7 +70,7 @@ const gameOverSound = new Audio("../assets/game-over.mp3")
 feedBtn.addEventListener('click', feedPet)
 playBtn.addEventListener('click', playPet)
 napBtn.addEventListener('click', takeNap)
-nameSubmitBtn.addEventListener('click', submitName)
+nameSubmitBtn.addEventListener('click', submitNameStartGame)
 resetBtn.addEventListener('click', reset)
 peeBtn.addEventListener('click', goPee)
 /*-------------------------------- Functions --------------------------------*/
@@ -182,7 +182,7 @@ function feedPet(){
   }
 }
 
-function submitName(){ 
+function submitNameStartGame(){ 
   if(nameInput.value === ""){
     alertsPanelEl.textContent = ("Please Enter A Name To Begin!")
   } else {
