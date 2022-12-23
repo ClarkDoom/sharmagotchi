@@ -3,7 +3,7 @@
 ## <center>Welcome to Sharmagotchi!</center>
 <img width="30%" src="./assets/app-screenshot.png">
 
-## <center>Your new favorite pet simulator! <a href="https://sharmagotchi.netlify.app/">Link</a> to game.</center>
+## <center>Your new favorite pet simulator! <br><a href="https://sharmagotchi.netlify.app/">Link</a> to game.</center>
 <br>
 </p>
 
