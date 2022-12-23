@@ -249,7 +249,7 @@ function submitNameStartGame(){
         updateAnimation(hungryAnimation)
       }
     }, 1000);
-    // bladder meter functionality
+    // bladder timer functionality
     let bladderTimer = setInterval(() => {
       if(healthMeter === 10){
         clearInterval(hungerTimer)
@@ -293,7 +293,7 @@ function submitNameStartGame(){
         journalItemsEl.appendChild(li)
       }
     }, 1000);
-    // sleepy meter functionality 
+    // sleepy timer functionality 
     let sleepyTimer = setInterval(() => {
       if(healthMeter === 10){
         clearInterval(hungerTimer)
