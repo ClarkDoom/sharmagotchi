@@ -12,6 +12,7 @@
 This is an app brought to you by my two charming but very needy Shar Pei. Owning a pet is hard work but its also fun and rewarding, which inspired me to model what it sometimes feels like to be a pet owner with my app. Its a constant fight against the clock to make sure they're fed, well rested, taken out, and have got enough play time.<br><br><br>
 
 <br>
+
 ## <center>Getting Started </center>
 
 ## Goal of the Game: Raise your own digital pet and ensure they are happy and healthy. 
