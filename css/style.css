@@ -1,7 +1,6 @@
 body {
   font-family: 'Press Start 2P', cursive;
   background-color: #fca400;
-  background-image: url("../assets/yellow-clay-background.jpg");
   text-align: center;
   display: flex;
   flex-direction: column;

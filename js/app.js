@@ -139,6 +139,49 @@ function reset(){
   return false;
 }
 
+function feedPet(){
+  if(petName === undefined){
+    alertsPanelEl.textContent = ("Pleae Enter A Name to Start")
+  } else {
+    if(isEating === true){
+      alertsPanelEl.textContent = (petName + " Is Already Eating")
+    } else if(gameOver === true){
+      alertsPanelEl.textContent = ("Game Over: Please Reset")
+    } else if(actionOccuring === true){
+      alertsPanelEl.textContent = ("Please Wait")
+    } else {
+      if(foodSupply >=1){
+        actionOccuring = true
+        foodSupply--
+        healthMeter++
+        petWeight++
+        hungerInterval = 0
+        hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
+        isEating = true
+        notificationUpSound.volume = .3
+        notificationUpSound.play()
+        alertsPanelEl.textContent = petName + " Is Eating"
+        let li = document.createElement("li")
+        let liContent = ("🍖🍗 " + petName + " Ate!")
+        li.innerText = liContent
+        journalItemsEl.appendChild(li)
+        updateAnimation(eatingAnimation)
+        render()
+        let feedPetTimeout = setTimeout(() => {
+          notificationDownSound.volume = .3
+          notificationDownSound.play()
+          updateAnimation(leftFacingAnimation)
+          isEating = false
+          actionOccuring = false
+          alertsPanelEl.textContent = petName + " Is Done Eating"
+        }, 5600)
+      } else {
+        alertsPanelEl.textContent = " Not Enough Food"
+      }
+    }
+  }
+}
+
 function submitName(){ 
   if(nameInput.value === ""){
     alertsPanelEl.textContent = ("Please Enter A Name To Begin!")
@@ -302,48 +345,7 @@ function submitName(){
   }
 }
 
-function feedPet(){
-  if(petName === undefined){
-    alertsPanelEl.textContent = ("Pleae Enter A Name to Start")
-  } else {
-    if(isEating === true){
-      alertsPanelEl.textContent = (petName + " Is Already Eating")
-    } else if(gameOver === true){
-      alertsPanelEl.textContent = ("Game Over: Please Reset")
-    } else if(actionOccuring === true){
-      alertsPanelEl.textContent = ("Please Wait")
-    } else {
-      if(foodSupply >=1){
-        actionOccuring = true
-        foodSupply--
-        healthMeter++
-        petWeight++
-        hungerInterval = 0
-        hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
-        isEating = true
-        notificationUpSound.volume = .3
-        notificationUpSound.play()
-        alertsPanelEl.textContent = petName + " Is Eating"
-        let li = document.createElement("li")
-        let liContent = ("🍖🍗 " + petName + " Ate!")
-        li.innerText = liContent
-        journalItemsEl.appendChild(li)
-        updateAnimation(eatingAnimation)
-        render()
-        let feedPetTimeout = setTimeout(() => {
-          notificationDownSound.volume = .3
-          notificationDownSound.play()
-          updateAnimation(leftFacingAnimation)
-          isEating = false
-          actionOccuring = false
-          alertsPanelEl.textContent = petName + " Is Done Eating"
-        }, 5600)
-      } else {
-        alertsPanelEl.textContent = " Not Enough Food"
-      }
-    }
-  }
-}
+
 
 function takeNap(){  
   if(petName === undefined){

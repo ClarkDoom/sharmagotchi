@@ -44,5 +44,4 @@ This is an app brought to you by my two charming but very needy Shar Pei. Owning
 
 ## Atributions: 
 * All animations were created by myself using <a href="https://www.pixilart.com/">pixilart</a>. 
-* Sounds provided by <a href="https://pixabay.com/">Pixabay</a> under an open license that allows for free personal or commercial use. 
-* <a href="https://www.freepik.com/free-photo/yellow-clay-textured-background-colorful-handmade-creative-art-abstract-style_18096858.htm#query=mustard%20yellow%20background&position=41&from_view=keyword">Background Image by rawpixel.com</a> on Freepik
+* Sounds provided by <a href="https://pixabay.com/">Pixabay</a> under an open license that allows for free personal or commercial use.
