@@ -237,12 +237,10 @@ function submitNameStartGame(){
         hungerProgressBar.setAttribute("style", `width: ${hungerInterval}%;`)
       }
       if(hungerInterval === 60 && hungerTimeLeft === 5){
-        actionOccuring == true
         healthMeter--
         render()
         alertSound.volume = .3
         alertSound.play()
-        // alertsPanelEl.textContent = petName + " Is Hungry - Feed Soon"
         let li = document.createElement("li")
         let liContent = "⚠️⚠️ HUNGER ALERT: Feed Soon! ⚠️⚠️"
         li.innerText = liContent
@@ -285,10 +283,9 @@ function submitNameStartGame(){
       if(bladderInterval === 60 && bladderTimeLeft === 5){
         healthMeter--
         render()
-        actionOccuring == true // probably need to add a timer to set this as false
+        actionOccuring == true
         alertSound.volume = .3
         alertSound.play()
-        // alertsPanelEl.textContent = petName + " Needs To Go #1"
         let li = document.createElement("li")
         let liContent = ("⚠️⚠️ BATHROOM ALERT: Go #1 Soon! ⚠️⚠️")
         li.innerText = liContent
@@ -328,12 +325,11 @@ function submitNameStartGame(){
         sleepyProgressBar.setAttribute("style", `width: ${sleepyInterval}%;`)
       }
       if(sleepyInterval === 60 && sleepyTimeLeft === 5){
-        actionOccuring == true // probably need to add a timer to set this as false
+        actionOccuring == true
         healthMeter--
         render()
         alertSound.volume = .3
         alertSound.play()
-        // alertsPanelEl.textContent = petName + " Is Getting Sleepy - Nap Soon"
         let li = document.createElement("li")
         let liContent = ("⚠️⚠️ SLEEPY ALERT: Take A Nap Soon! ⚠️⚠️")
         li.innerText = liContent
