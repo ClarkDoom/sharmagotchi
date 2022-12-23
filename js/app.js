@@ -326,7 +326,6 @@ function takeNap(){
   } else {
     actionOccuring = true
     healthMeter++
-    foodSupply++
     isNapping = true
     sleepyInterval = 0
     sleepyProgressBar.setAttribute("style", `width: ${sleepyInterval}%;`)
@@ -361,7 +360,6 @@ function playPet(){
     alertsPanelEl.textContent = ("Please Wait")
   } else {
     actionOccuring = true
-    foodSupply++
     healthMeter++
     isPlaying = true
     updateAnimation(playingAnimation)
