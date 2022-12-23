@@ -362,7 +362,7 @@ a {
     max-width: 100px;
     margin-top: 5px;
     margin-right: 5px;
-    font-size: xx-small;
+    font-size: x-small;
   }
 
   .interaction-button {
@@ -377,6 +377,11 @@ a {
 
 @media only screen and (max-width: 905px) {
   .main-display {
-    height: 352px;
+    height: 355px;
   }
+
+  #alerts-panel {
+   width: 150px 
+  }
+
 }
