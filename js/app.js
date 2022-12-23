@@ -113,6 +113,9 @@ function updateHealthMeter(){
     clearInterval(playPetTimeout)
     clearInterval(takeNapTimeout)
     clearInterval(goPeeTimeout)
+  } else if(healthMeter < 0){
+    healthMeter = 0  
+    healthProgressBar.setAttribute(`style`, `width: 0%;`)
   } else {
     healthProgressBar.setAttribute(`style`, `width: ${healthMeter}0%;`)
   }
@@ -165,6 +168,10 @@ function submitName(){
         clearInterval(hungerTimer)
         clearInterval(bladderTimer)
         clearInterval(sleepyTimer)
+        clearInterval(feedPetTimeout)
+        clearInterval(playPetTimeout)
+        clearInterval(takeNapTimeout)
+        clearInterval(goPeeTimeout)
       }
       hungerTimeLeft -= 1
       if(hungerInterval === 100){
@@ -176,6 +183,10 @@ function submitName(){
         clearInterval(hungerTimer)
         clearInterval(bladderTimer)
         clearInterval(sleepyTimer)
+        clearInterval(feedPetTimeout)
+        clearInterval(playPetTimeout)
+        clearInterval(takeNapTimeout)
+        clearInterval(goPeeTimeout)
       }
       if(hungerTimeLeft === -1){
         hungerTimeLeft = 5
@@ -188,7 +199,7 @@ function submitName(){
         render()
         alertSound.volume = .3
         alertSound.play()
-        alertsPanelEl.textContent = petName + " Is Hungry - Feed Soon"
+        // alertsPanelEl.textContent = petName + " Is Hungry - Feed Soon"
         let li = document.createElement("li")
         let liContent = "⚠️⚠️ HUNGER ALERT: Feed Soon! ⚠️⚠️"
         li.innerText = liContent
@@ -203,6 +214,10 @@ function submitName(){
         clearInterval(hungerTimer)
         clearInterval(bladderTimer)
         clearInterval(sleepyTimer)
+        clearInterval(feedPetTimeout)
+        clearInterval(playPetTimeout)
+        clearInterval(takeNapTimeout)
+        clearInterval(goPeeTimeout)
       }
       bladderTimeLeft -= 1
       if(bladderInterval === 100){
@@ -214,6 +229,10 @@ function submitName(){
         clearInterval(hungerTimer)
         clearInterval(bladderTimer)
         clearInterval(sleepyTimer)
+        clearInterval(feedPetTimeout)
+        clearInterval(playPetTimeout)
+        clearInterval(takeNapTimeout)
+        clearInterval(goPeeTimeout)
       }
       if(bladderTimeLeft === -1){
         bladderTimeLeft = 5
@@ -226,7 +245,7 @@ function submitName(){
         actionOccuring == true // probably need to add a timer to set this as false
         alertSound.volume = .3
         alertSound.play()
-        alertsPanelEl.textContent = petName + " Needs To Go #1"
+        // alertsPanelEl.textContent = petName + " Needs To Go #1"
         let li = document.createElement("li")
         let liContent = ("⚠️⚠️ BATHROOM ALERT: Go #1 Soon! ⚠️⚠️")
         li.innerText = liContent
@@ -240,6 +259,10 @@ function submitName(){
         clearInterval(hungerTimer)
         clearInterval(bladderTimer)
         clearInterval(sleepyTimer)
+        clearInterval(feedPetTimeout)
+        clearInterval(playPetTimeout)
+        clearInterval(takeNapTimeout)
+        clearInterval(goPeeTimeout)
       }
       sleepyTimeLeft -= 1
       if(sleepyInterval === 100){
@@ -251,6 +274,10 @@ function submitName(){
         clearInterval(hungerTimer)
         clearInterval(bladderTimer)
         clearInterval(sleepyTimer)
+        clearInterval(feedPetTimeout)
+        clearInterval(playPetTimeout)
+        clearInterval(takeNapTimeout)
+        clearInterval(goPeeTimeout)
       }
       if(sleepyTimeLeft === -1){
         sleepyTimeLeft = 5
@@ -263,7 +290,7 @@ function submitName(){
         render()
         alertSound.volume = .3
         alertSound.play()
-        alertsPanelEl.textContent = petName + " Is Getting Sleepy - Nap Soon"
+        // alertsPanelEl.textContent = petName + " Is Getting Sleepy - Nap Soon"
         let li = document.createElement("li")
         let liContent = ("⚠️⚠️ SLEEPY ALERT: Take A Nap Soon! ⚠️⚠️")
         li.innerText = liContent
